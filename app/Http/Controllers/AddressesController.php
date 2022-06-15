@@ -2,13 +2,18 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
 class AddressesController extends Controller
 {
     //
     public function list() {
-        return view('addresses.list');
+        $list = DB::select('SELECT * FROM addresses');
+
+        return view('addresses.list', [
+            'list' => $list
+        ]);
     }
     public function add() {
         return view('addresses.add');

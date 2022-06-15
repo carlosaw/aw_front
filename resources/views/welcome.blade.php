@@ -8,7 +8,7 @@
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
-
+        <link rel="stylesheet" href="{{ asset('site/style.css') }}" />
         <!-- Styles -->
         <style>
             html, body {
@@ -64,6 +64,7 @@
         </style>
     </head>
     <body>
+        <button class="btn btn-lg btn-orange">Bootstrap OK</button>
         <div class="flex-center position-ref full-height">
             @if (Route::has('login'))
                 <div class="top-right links">
@@ -96,5 +97,8 @@
                 </div>
             </div>
         </div>
+
+    <script src="{{ asset('site/jquery.js') }}"></script>
+    <script src="{{ asset('site/bootstrap.js') }}"></script>
     </body>
 </html>

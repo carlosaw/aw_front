@@ -2,13 +2,17 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
 class ClientsController extends Controller
 {
     //
     public function list() {
-        return view('clients.list');
+        $list = DB::select('SELECT * FROM clients');
+        return view('clients.list', [
+            'list' => $list
+        ]);
     }
     public function add() {
         return view('clients.add');
