@@ -24,8 +24,6 @@ class CreateVehiclesTable extends Migration
             $table->string('color');
             $table->bigInteger('year');
             $table->bigInteger('km');
-            
-            $table->timestamps();
         });
     }
 

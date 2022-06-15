@@ -19,8 +19,7 @@ class CreateProductsTable extends Migration
             $table->float('value_unit');
             $table->integer('quantity');
             $table->float('discount')->default(0);
-            $table->float('total');            
-            $table->timestamps();
+            $table->float('total');
         });
     }
 
