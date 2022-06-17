@@ -9,15 +9,14 @@
       <div class="alert alert-danger">
         {{session('warning')}}
       </div>
-    {{-- @elseif(session('success'))
+    @endif
+    
+    @if(session('success'))
       <div class="alert alert-success">
         {{session('success')}}
-      </div> --}}
+      </div>
     @endif
-
-    @yield('content')
     
-
     <form method="POST">
       @csrf
       <div class="form-group">

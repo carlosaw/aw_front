@@ -39,7 +39,9 @@ class VehiclesController extends Controller
                 'km' => $km
             ]);
             
-            return redirect()->route('vehicles.list');
+            return redirect()
+            ->route('vehicles.list')
+            ->with('success', 'Veículo adicionado com sucesso!');;
         } else {
             return redirect()
             ->route('vehicles.add')
@@ -61,8 +63,38 @@ class VehiclesController extends Controller
         } 
     }
 
-    public function editAction() {
-        
+    public function editAction(Request $request, $id) {
+        if($request->filled('plate')) {
+            $plate = $request->input('plate');
+            $brand = $request->input('brand');
+            $model = $request->input('model');
+            $color = $request->input('color');
+            $year = $request->input('year');
+            $km = $request->input('km');
+
+            $data = DB::select('SELECT * FROM vehicles WHERE id = :id', [
+                'id' => $id
+            ]);
+    
+            if(count($data) > 0) {// Se tiver manda pra edit
+                DB::update('UPDATE vehicles SET plate = :plate, brand = :brand, model = :model, color = :color, year = :year, km = :km WHERE id = :id', [
+                    'id' => $id,
+                    'plate' => $plate,
+                    'brand' => $brand,
+                    'model' => $model,
+                    'color' => $color,
+                    'year' => $year,
+                    'km' => $km
+                ]);
+            }
+            return redirect()
+            ->route('vehicles.list')
+            ->with('success', 'Veículo editado com sucesso!');
+        } else {
+            return redirect()
+            ->route('vehicles', ['id' => $id])
+            ->with('warning', 'Preencha todos os campos!');
+        }
     }
 
     public function del() {

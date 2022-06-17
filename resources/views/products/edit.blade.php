@@ -9,6 +9,10 @@
     <div class="alert alert-danger">
       {{session('warning')}}
     </div>
+  @elseif(session('success'))
+    <div class="alert alert-success">
+      {{session('success')}}
+    </div>
   @endif
   
   <form method="POST">
@@ -33,13 +37,13 @@
     <div class="form-group">
       <label for="discount">Desconto</label>
         <input type="text" class="form-control" id="discount" name="discount" 
-        value="{{ number_format( $data->discount, 2, ',', '.') }}">
+        value="{{ $data->discount }}">
     </div>
 
     <div class="form-group">
       <label for="total">Total</label>
         <input type="text" class="form-control" id="total" name="total" 
-        value="{{ number_format( $data->total, 2, ',', '.') }}">
+        value="{{ $data->total }}">
     </div>
 
     <input class="btn btn-sm btn-primary" type="submit" value="Salvar" />

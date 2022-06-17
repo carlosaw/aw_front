@@ -9,6 +9,10 @@
     <div class="alert alert-danger">
       {{session('warning')}}
     </div>
+  @elseif(session('success'))
+    <div class="alert alert-success">
+      {{session('success')}}
+    </div>
   @endif
   
   <form method="POST">

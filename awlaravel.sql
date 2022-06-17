@@ -1,9 +1,9 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.4
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 17-Jun-2022 às 02:32
+-- Tempo de geração: 17-Jun-2022 às 22:17
 -- Versão do servidor: 10.4.22-MariaDB
 -- versão do PHP: 7.4.26
 
@@ -41,12 +41,13 @@ CREATE TABLE `addresses` (
 --
 
 INSERT INTO `addresses` (`id`, `street_num`, `cep`, `district`, `city`, `state`) VALUES
-(1, 'Rua Men de Sá, 61', '78125-650', 'Jardim Imperador', 'Várzea Grande', 'MT'),
-(2, 'Rua Do Anjo, 45', '75126-650', 'Centro', 'Jandaia do Sul', 'PR'),
-(3, 'Rua Amanhã cedo, 99', '25150-220', 'Vila Piolho', 'Curitiba', 'PR'),
-(4, 'Rua qualquer, 4566', '78125-650', 'Centro', 'V. Grande', 'MT'),
-(5, 'Rua Camilo Pitanga', '45125-980', 'Notredame', 'Varsóvia', 'PA'),
-(6, 'Rua Camarada, 101', '78125-980', 'Norte', 'Ciudad Del Leste', 'PY');
+(1, 'Rua Castro Alves, 437', '78125-590', 'Centro', 'Curitiba', 'PR'),
+(2, 'Rua Men de Sá, 61', '78125-650', 'Centro', 'Cuiabá', 'MT'),
+(3, 'Tv. Pedro Pedrossian, 433', '78125-520', 'Centro Norte', 'Cuiabá', 'MT'),
+(4, 'Rua Cantagalo, 4555', '78125-650', 'Centro', 'Cuiabá', 'MT'),
+(5, 'Rua Major Gama, 344', '78150-500', 'Centro', 'V. Grande', 'MT'),
+(6, 'Rua Itapuã, 800', '45125-650', 'Centro', 'Nortelândia', 'MT'),
+(7, 'Travessa Carajás, 678', '45362-250', 'Centro', 'Guarapuava', 'PR');
 
 -- --------------------------------------------------------
 
@@ -68,11 +69,8 @@ CREATE TABLE `clients` (
 --
 
 INSERT INTO `clients` (`id`, `name`, `cpf`, `fone`, `email`, `address_id`) VALUES
-(1, 'Mara Cordeiro', '222.333.444-99', '(65) 9 9981-3856', 'mara@gmail.com', 1),
-(2, 'Carlos Alberto', '111.111.111-22', '(65) 9 9981-3879', 'caralos@gmail.com', 2),
-(3, 'Fulano da Silva', '000.000.000-11', '(65) 3682-5291', 'fulano@gmail.com', 3),
-(4, 'Beltrano Oliveira', '666.666.666-66', '(65) 3684-9956', 'beltrano@gmail.com', 5),
-(5, 'Adriana Lucilda', '555.555.999-88', '(65) 3685-6598', 'adri@gmail.com', NULL);
+(1, 'Mara Editada', '111.222.333-44', '(65) 9 9981-4563', 'mara2@gmail.com', 1),
+(2, 'Carlos Alberto', '491.238.669-35', '(65) 9 9981-3879', 'carlos@gmail.com', NULL);
 
 -- --------------------------------------------------------
 
@@ -161,10 +159,10 @@ CREATE TABLE `personal_access_tokens` (
 CREATE TABLE `products` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `value_unit` int(11) NOT NULL DEFAULT 0,
+  `value_unit` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
   `quantity` int(11) NOT NULL,
-  `discount` int(11) DEFAULT NULL,
-  `total` int(11) NOT NULL DEFAULT 0,
+  `discount` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `total` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
   `vehicle_id` bigint(20) UNSIGNED DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -173,11 +171,10 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id`, `name`, `value_unit`, `quantity`, `discount`, `total`, `vehicle_id`) VALUES
-(1, 'Junta de Cabeçote', 145, 1, 0, 145, 1),
-(2, 'Junta Coletor de Escape', 68, 1, 0, 68, 2),
-(3, 'Sonda Lambda', 299, 1, 0, 299, 3),
-(4, 'Bomba de Combustivel', 238, 1, 0, 238, 3),
-(5, 'Hidormetro', 121, 1, 0, 121, 1);
+(1, 'Junta de Cabeçote 2', '128,50', 1, '0,00', '128,50', NULL),
+(2, 'Carburador', '778,00', 1, '0,00', '778,00', NULL),
+(3, 'Junta Coletor de escape', '68,75', 1, '0,00', '68,75', NULL),
+(4, 'Cabeçote usado', '1.200,00', 1, '0,00', '1.250,00', NULL);
 
 -- --------------------------------------------------------
 
@@ -204,8 +201,8 @@ CREATE TABLE `vehicles` (
   `brand` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `model` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `color` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `year` bigint(20) NOT NULL,
-  `km` bigint(20) NOT NULL DEFAULT 0,
+  `year` float NOT NULL DEFAULT 0,
+  `km` float NOT NULL DEFAULT 0,
   `client_id` bigint(20) UNSIGNED DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -214,10 +211,8 @@ CREATE TABLE `vehicles` (
 --
 
 INSERT INTO `vehicles` (`id`, `plate`, `brand`, `model`, `color`, `year`, `km`, `client_id`) VALUES
-(1, 'OBG89A23', 'Honda', 'Civic', 'Branca', 2012, 99852, 1),
-(2, 'MKD34R55', 'Mitsubishi', 'Scoper', 'Preta', 1999, 85125, 2),
-(3, 'PGW67H88', 'Toyota', 'Lexus', 'Vermelha', 2001, 65125, 3),
-(4, 'ABC97G65', 'Mercedes', 'GLA 200', 'Prata', 2001, 126, 4);
+(1, 'OBC1D85', 'Honda', 'Civic', 'Branca', 2012, 125.652, NULL),
+(2, 'CAP 7896', 'Chevrolet', 'Onix', 'Branca', 2019, 128.521, NULL);
 
 --
 -- Índices para tabelas despejadas
@@ -294,13 +289,13 @@ ALTER TABLE `vehicles`
 -- AUTO_INCREMENT de tabela `addresses`
 --
 ALTER TABLE `addresses`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT de tabela `clients`
 --
 ALTER TABLE `clients`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de tabela `failed_jobs`
@@ -324,7 +319,7 @@ ALTER TABLE `personal_access_tokens`
 -- AUTO_INCREMENT de tabela `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de tabela `users`
@@ -336,7 +331,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT de tabela `vehicles`
 --
 ALTER TABLE `vehicles`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Restrições para despejos de tabelas

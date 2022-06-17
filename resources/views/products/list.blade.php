@@ -4,7 +4,19 @@
 
 @section('content')
   <h1>Lista de Produtos</h1>
-  
+
+  @if(session('success'))
+    <div class="alert alert-success">
+      {{session('success')}}
+    </div>
+  @endif
+
+  @if(session('danger'))
+    <div class="alert alert-danger">
+      {{session('danger')}}
+    </div>
+  @endif
+
   <a href="{{ route('products.add') }}">
     <button class="btn btn-sm btn-primary">Adicionar</button>
   </a>
@@ -22,10 +34,10 @@
       @foreach($list as $item)    
         <tr>
           <td>{{$item->name}}</td>
-          <td style="text-align: center">{{  'R$ '.number_format($item->value_unit, 2, ',', '.') }}</td>
-          <td style="text-align: center">{{$item->quantity}}</td>
-          <td style="text-align: center">{{  'R$ '.number_format($item->discount, 2, ',', '.') }}</td>
-          <td style="text-align: center">{{  'R$ '.number_format($item->total, 2, ',', '.') }}</td>
+          <td style="text-align: center">{{ $item->value_unit }}</td>
+          <td style="text-align: center">{{ $item->quantity }}</td>
+          <td style="text-align: center">{{ $item->discount }}</td>
+          <td style="text-align: center">{{ $item->total }}</td>
           <td>
             <a href="{{ route('products.edit', ['id' => $item->id]) }}">[ Editar ]</a> - 
             <a href="{{ route('products.del', ['id' => $item->id]) }}">[ Excluir ]</a>

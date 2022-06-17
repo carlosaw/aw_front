@@ -5,6 +5,18 @@
 @section('content')
   <h1>Lista de Endereços</h1>
 
+  @if(session('success'))
+    <div class="alert alert-success">
+      {{session('success')}}
+    </div>
+  @endif
+
+  @if(session('danger'))
+    <div class="alert alert-danger">
+      {{session('danger')}}
+    </div>
+  @endif
+
   <a href="{{ route('addresses.add') }}">
     <button class="btn btn-sm btn-primary">Adicionar</button>
   </a>

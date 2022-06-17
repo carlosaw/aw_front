@@ -36,7 +36,9 @@ class ProductsController extends Controller
                 'total' => $total
             ]);
             
-            return redirect()->route('products.list');
+            return redirect()
+            ->route('products.list')
+            ->with('success', 'Produto adicionado com sucesso!');
         } else {
             return redirect()
             ->route('products.add')
@@ -58,8 +60,36 @@ class ProductsController extends Controller
         } 
     }
 
-    public function editAction() {
-        
+    public function editAction(Request $request, $id) {
+        if($request->filled('name')) {
+            $name = $request->input('name');
+            $value_unit = $request->input('value_unit');
+            $quantity = $request->input('quantity');
+            $discount = $request->input('discount');
+            $total = $request->input('total');
+
+            $data = DB::select('SELECT * FROM products WHERE id = :id', [
+                'id' => $id
+            ]);
+    
+            if(count($data) > 0) {// Se tiver manda pra edit
+                DB::update('UPDATE products SET name = :name, value_unit = :value_unit, quantity = :quantity, discount = :discount, total = :total WHERE id = :id', [
+                    'id' => $id,
+                    'name' => $name,
+                    'value_unit' => $value_unit,
+                    'quantity' => $quantity,
+                    'discount' => $discount,
+                    'total' => $total
+                ]);
+            }
+            return redirect()
+            ->route('products.list')
+            ->with('success', 'Produto editado com sucesso!!');
+        } else {
+            return redirect()
+            ->route('products.edit', ['id' => $id])
+            ->with('warning', 'Preencha todos os campos!');
+        }
     }
 
     public function del() {

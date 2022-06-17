@@ -34,7 +34,9 @@ class ClientsController extends Controller
                 'email' => $email
             ]);
 
-            return redirect()->route('clients.list');
+            return redirect()
+            ->route('clients.list')
+            ->with('success', 'Cliente adicionado com sucesso!');;
         } else {
             return redirect()
             ->route('clients.add')
@@ -56,8 +58,34 @@ class ClientsController extends Controller
         } 
     }
 
-    public function editAction() {
-        
+    public function editAction(Request $request, $id) {
+        if($request->filled('name')) {
+            $name = $request->input('name');
+            $cpf = $request->input('cpf');
+            $fone = $request->input('fone');
+            $email = $request->input('email');
+
+            $data = DB::select('SELECT * FROM clients WHERE id = :id', [
+                'id' => $id
+            ]);
+    
+            if(count($data) > 0) {// Se tiver manda pra edit
+                DB::update('UPDATE clients SET name = :name, cpf = :cpf, fone = :fone, email = :email WHERE id = :id', [
+                    'id' => $id,
+                    'name' => $name,
+                    'cpf'  => $cpf,
+                    'fone' => $fone,
+                    'email' => $email
+                ]);
+            }
+            return redirect()
+            ->route('clients.list')
+            ->with('success', 'Cliente editado com sucesso!');
+        } else {
+            return redirect()
+            ->route('clients.edit', ['id' => $id])
+            ->with('warning', 'Preencha todos os campos!');
+        }
     }
     
     public function del() {
