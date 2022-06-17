@@ -5,8 +5,10 @@
 @section('content')
   <h1>Lista de Endereços</h1>
 
-  <button class="btn btn-sm btn-primary">Adicionar</button>
-
+  <a href="{{ route('addresses.add') }}">
+    <button class="btn btn-sm btn-primary">Adicionar</button>
+  </a>
+  
   <table class="table table-striped table-hover">
       <tr>
         <th>Rua, número</th>
@@ -23,10 +25,14 @@
           <td>{{$item->cep}}</td>
           <td>{{$item->district}}</td>
           <td>{{$item->city}}</td>
-          <td style="text-align: center">{{$item->state}}</td>
-          <td><a href=""><img src="assets/images/edit.png" class="image"/></a>
-             - <a href=""><img src="assets/images/del.jpg" class="image"/></a></td>
-          
+          <td>{{$item->state}}</td>
+          {{-- <td><a href=""><img src="assets/images/edit.png" class="image"/></a>
+             - <a href=""><img src="assets/images/del.jpg" class="image"/></a>
+          </td>--}}
+          <td>
+            <a href="{{ route('addresses.edit', ['id' => $item->id]) }}">[ Editar ]</a> - 
+            <a href="{{ route('addresses.del', ['id' => $item->id]) }}">[ Excluir ]</a>
+          </td>
         </tr>        
       @endforeach     
     </table>  

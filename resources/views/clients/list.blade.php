@@ -5,7 +5,9 @@
 @section('content')
   <h1>Lista de Clientes</h1>
 
-  <button class="btn btn-sm btn-primary">Adicionar</button>
+  <a href="{{ route('clients.add') }}">
+    <button class="btn btn-sm btn-primary">Adicionar</button>
+  </a>
   
   <table class="table table-striped table-hover">
       <tr>
@@ -22,7 +24,10 @@
           <td style="text-align: center">{{$item->cpf}}</td>
           <td style="text-align: center">{{$item->fone}}</td>
           <td style="text-align: center">{{$item->email}}</td>
-          <td><a href="">[ Editar ]</a> - <a href="">[ Excluir ]</a></td>
+          <td>
+            <a href="{{ route('clients.edit', ['id' => $item->id]) }}">[ Editar ]</a> - 
+            <a href="{{ route('clients.del', ['id' => $item->id]) }}">[ Excluir ]</a>
+          </td>
         </tr>        
       @endforeach     
     </table>  

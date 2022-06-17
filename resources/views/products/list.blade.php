@@ -5,7 +5,9 @@
 @section('content')
   <h1>Lista de Produtos</h1>
   
-  <button class="btn btn-sm btn-primary">Adicionar</button>
+  <a href="{{ route('products.add') }}">
+    <button class="btn btn-sm btn-primary">Adicionar</button>
+  </a>
 
   <table class="table table-striped table-hover">
       <tr>
@@ -24,7 +26,10 @@
           <td style="text-align: center">{{$item->quantity}}</td>
           <td style="text-align: center">{{  'R$ '.number_format($item->discount, 2, ',', '.') }}</td>
           <td style="text-align: center">{{  'R$ '.number_format($item->total, 2, ',', '.') }}</td>
-          <td><a href="">[ Editar ]</a> - <a href="">[ Excluir ]</a></td>
+          <td>
+            <a href="{{ route('products.edit', ['id' => $item->id]) }}">[ Editar ]</a> - 
+            <a href="{{ route('products.del', ['id' => $item->id]) }}">[ Excluir ]</a>
+          </td>
         </tr>        
       @endforeach     
     </table>  

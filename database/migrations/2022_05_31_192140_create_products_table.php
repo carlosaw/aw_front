@@ -22,6 +22,7 @@ class CreateProductsTable extends Migration
             $table->float('total');
         });
     }
+    protected $timestamps = false;
 
     /**
      * Reverse the migrations.

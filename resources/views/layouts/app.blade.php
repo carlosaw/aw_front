@@ -5,6 +5,7 @@
     <link rel="stylesheet" href="{{ asset('site/style.css') }}" />
 </head>
 <body>
+
 <div class="container">
     <header>
         <h1>Header</h1>

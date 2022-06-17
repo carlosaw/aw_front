@@ -15,7 +15,7 @@ class AddColumnClientIdVehiclesTable extends Migration
     {
         Schema::table('vehicles', function (Blueprint $table) {
             //
-            $table->unsignedBigInteger('client_id')->nullable();
+            $table->unsignedBigInteger('client_id')->nullable(true);
         });
     }
 
