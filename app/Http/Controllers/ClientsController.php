@@ -59,25 +59,21 @@ class ClientsController extends Controller
     }
 
     public function editAction(Request $request, $id) {
-        if($request->filled('name')) {
+        if($request->filled('name')) { // Pega os inputs
             $name = $request->input('name');
             $cpf = $request->input('cpf');
             $fone = $request->input('fone');
             $email = $request->input('email');
 
-            $data = DB::select('SELECT * FROM clients WHERE id = :id', [
-                'id' => $id
+            // Muda no banco 
+            DB::update('UPDATE clients SET name = :name, cpf = :cpf, fone = :fone, email = :email WHERE id = :id', [
+                'id' => $id,
+                'name' => $name,
+                'cpf'  => $cpf,
+                'fone' => $fone,
+                'email' => $email
             ]);
-    
-            if(count($data) > 0) {// Se tiver manda pra edit
-                DB::update('UPDATE clients SET name = :name, cpf = :cpf, fone = :fone, email = :email WHERE id = :id', [
-                    'id' => $id,
-                    'name' => $name,
-                    'cpf'  => $cpf,
-                    'fone' => $fone,
-                    'email' => $email
-                ]);
-            }
+            // Volta pra Lista 
             return redirect()
             ->route('clients.list')
             ->with('success', 'Cliente editado com sucesso!');
@@ -88,8 +84,14 @@ class ClientsController extends Controller
         }
     }
     
-    public function del() {
-        
+    public function del($id) {
+        DB::delete("DELETE FROM clients WHERE id = :id", [
+            'id' => $id
+        ]);
+        // Volta pra Lista
+        return redirect()
+        ->route('clients.list')
+        ->with('success', 'Cliente excluído com sucesso!');
     }
 
     public function store(Request $request){

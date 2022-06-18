@@ -61,27 +61,23 @@ class ProductsController extends Controller
     }
 
     public function editAction(Request $request, $id) {
-        if($request->filled('name')) {
+        if($request->filled('name')) {// Pega os inputs
             $name = $request->input('name');
             $value_unit = $request->input('value_unit');
             $quantity = $request->input('quantity');
             $discount = $request->input('discount');
             $total = $request->input('total');
 
-            $data = DB::select('SELECT * FROM products WHERE id = :id', [
-                'id' => $id
+            // Muda no banco
+            DB::update('UPDATE products SET name = :name, value_unit = :value_unit, quantity = :quantity, discount = :discount, total = :total WHERE id = :id', [
+                'id' => $id,
+                'name' => $name,
+                'value_unit' => $value_unit,
+                'quantity' => $quantity,
+                'discount' => $discount,
+                'total' => $total
             ]);
-    
-            if(count($data) > 0) {// Se tiver manda pra edit
-                DB::update('UPDATE products SET name = :name, value_unit = :value_unit, quantity = :quantity, discount = :discount, total = :total WHERE id = :id', [
-                    'id' => $id,
-                    'name' => $name,
-                    'value_unit' => $value_unit,
-                    'quantity' => $quantity,
-                    'discount' => $discount,
-                    'total' => $total
-                ]);
-            }
+            // Volta pra Lista
             return redirect()
             ->route('products.list')
             ->with('success', 'Produto editado com sucesso!!');
@@ -92,8 +88,14 @@ class ProductsController extends Controller
         }
     }
 
-    public function del() {
-        
+    public function del($id) {
+        DB::delete("DELETE FROM products WHERE id = :id", [
+            'id' => $id
+        ]);
+        // Volta pra Lista
+        return redirect()
+        ->route('products.list')
+        ->with('success', 'Produto excluído com sucesso!');
     }
 
     public function store(Request $request){

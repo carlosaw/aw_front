@@ -62,28 +62,24 @@ class AddressesController extends Controller
     }
 
     public function editAction(Request $request, $id) {
-        if($request->filled('street_num')) {
+        if($request->filled('street_num')) {// Pega os inputs
             $street_num = $request->input('street_num');
             $cep = $request->input('cep');
             $district = $request->input('district');
             $city = $request->input('city');
             $state = $request->input('state');
 
-            $data = DB::select('SELECT * FROM addresses WHERE id = :id', [
-                'id' => $id
+            // Muda no banco
+            DB::update('UPDATE addresses SET street_num = :street_num, cep = :cep, district = :district, city = :city, state = :state
+                WHERE id = :id', [
+                'id' => $id,
+                'street_num' => $street_num,
+                'cep'  => $cep,
+                'district' => $district,
+                'city' => $city,
+                'state' => $state
             ]);
-    
-            if(count($data) > 0) {// Se tiver manda pra edit
-                DB::update('UPDATE addresses SET street_num = :street_num, cep = :cep, district = :district, city = :city, state = :state
-                 WHERE id = :id', [
-                    'id' => $id,
-                    'street_num' => $street_num,
-                    'cep'  => $cep,
-                    'district' => $district,
-                    'city' => $city,
-                    'state' => $state
-                ]);
-            }
+            // Volta pra lista
             return redirect()
             ->route('addresses.list')
             ->with('success', 'Endereço editado com sucesso!!');
@@ -94,8 +90,14 @@ class AddressesController extends Controller
         }
     }
 
-    public function del() {
-        
+    public function del($id) {
+        DB::delete("DELETE FROM addresses WHERE id = :id", [
+            'id' => $id
+        ]);
+        // Volta pra Lista
+        return redirect()
+        ->route('addresses.list')
+        ->with('success', 'Endereço excluído com sucesso!');
     }
     
     public function store(Request $request){

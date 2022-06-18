@@ -64,7 +64,7 @@ class VehiclesController extends Controller
     }
 
     public function editAction(Request $request, $id) {
-        if($request->filled('plate')) {
+        if($request->filled('plate')) {// Pega tudo
             $plate = $request->input('plate');
             $brand = $request->input('brand');
             $model = $request->input('model');
@@ -72,21 +72,17 @@ class VehiclesController extends Controller
             $year = $request->input('year');
             $km = $request->input('km');
 
-            $data = DB::select('SELECT * FROM vehicles WHERE id = :id', [
-                'id' => $id
+            // Muda no banco
+            DB::update('UPDATE vehicles SET plate = :plate, brand = :brand, model = :model, color = :color, year = :year, km = :km WHERE id = :id', [
+                'id' => $id,
+                'plate' => $plate,
+                'brand' => $brand,
+                'model' => $model,
+                'color' => $color,
+                'year' => $year,
+                'km' => $km
             ]);
-    
-            if(count($data) > 0) {// Se tiver manda pra edit
-                DB::update('UPDATE vehicles SET plate = :plate, brand = :brand, model = :model, color = :color, year = :year, km = :km WHERE id = :id', [
-                    'id' => $id,
-                    'plate' => $plate,
-                    'brand' => $brand,
-                    'model' => $model,
-                    'color' => $color,
-                    'year' => $year,
-                    'km' => $km
-                ]);
-            }
+            // Volta pra lista
             return redirect()
             ->route('vehicles.list')
             ->with('success', 'Veículo editado com sucesso!');
@@ -97,8 +93,14 @@ class VehiclesController extends Controller
         }
     }
 
-    public function del() {
-        
+    public function del($id) {
+        DB::delete("DELETE FROM vehicles WHERE id = :id", [
+            'id' => $id
+        ]);
+        // Volta pra Lista
+        return redirect()
+        ->route('vehicles.list')
+        ->with('success', 'Veículo excluído com sucesso!');
     }
 
     public function store(Request $request){
