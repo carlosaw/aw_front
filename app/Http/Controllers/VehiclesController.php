@@ -39,9 +39,8 @@ class VehiclesController extends Controller
                 'km' => $km
             ]);
             
-            return redirect()
-            ->route('vehicles.list')
-            ->with('success', 'Veículo adicionado com sucesso!');;
+            return redirect()->route('vehicles.list');
+            
         } else {
             return redirect()
             ->route('vehicles.add')
@@ -83,9 +82,8 @@ class VehiclesController extends Controller
                 'km' => $km
             ]);
             // Volta pra lista
-            return redirect()
-            ->route('vehicles.list')
-            ->with('success', 'Veículo editado com sucesso!');
+            return redirect()->route('vehicles.list');
+            
         } else {
             return redirect()
             ->route('vehicles', ['id' => $id])
@@ -98,18 +96,8 @@ class VehiclesController extends Controller
             'id' => $id
         ]);
         // Volta pra Lista
-        return redirect()
-        ->route('vehicles.list')
-        ->with('success', 'Veículo excluído com sucesso!');
+        return redirect()->route('vehicles.list');
     }
-
-    public function store(Request $request){
-        $data = $request->all();
-        if(!empty($data['titulo'])){
-            $tarefa = $this->tarefa->create($data);
-            return redirect()->route('tarefas.index')->with('success', 'Registro salvo');
-        } else {
-            return redirect()->route('tarefas.create')->with('warning', 'Campos obrigatórios');
-        }
-    }
+        
+    //
 }

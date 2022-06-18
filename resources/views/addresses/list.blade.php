@@ -43,7 +43,7 @@
           </td>--}}
           <td>
             <a href="{{ route('addresses.edit', ['id' => $item->id]) }}">[ Editar ]</a> - 
-            <a href="{{ route('addresses.del', ['id' => $item->id]) }}">[ Excluir ]</a>
+            <a href="{{ route('addresses.del', ['id' => $item->id]) }}" onclick="confirm('Tem certeza que deseja excluir este Endereço?')">[ Excluir ]</a>
           </td>
         </tr>        
       @endforeach     

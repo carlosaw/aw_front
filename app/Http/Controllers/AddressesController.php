@@ -37,9 +37,8 @@ class AddressesController extends Controller
                 'state' => $state
             ]);
 
-            return redirect()
-            ->route('addresses.list')
-            ->with('success', 'Endereço adicionado com sucesso!!');;
+            return redirect()->route('addresses.list');
+            
         } else {
             return redirect()
             ->route('addresses.add')
@@ -80,9 +79,8 @@ class AddressesController extends Controller
                 'state' => $state
             ]);
             // Volta pra lista
-            return redirect()
-            ->route('addresses.list')
-            ->with('success', 'Endereço editado com sucesso!!');
+            return redirect()->route('addresses.list');
+            
         } else {
             return redirect()
             ->route('addresses.edit', ['id' => $id])
@@ -95,18 +93,8 @@ class AddressesController extends Controller
             'id' => $id
         ]);
         // Volta pra Lista
-        return redirect()
-        ->route('addresses.list')
-        ->with('success', 'Endereço excluído com sucesso!');
+        return redirect()->route('addresses.list');
+        
     }
     
-    public function store(Request $request){
-        $data = $request->all();
-        if(!empty($data['titulo'])){
-            $tarefa = $this->tarefa->create($data);
-            return redirect()->route('tarefas.index')->with('success', 'Registro salvo');
-        } else {
-            return redirect()->route('tarefas.create')->with('warning', 'Campos obrigatórios');
-        }
-    }
 }

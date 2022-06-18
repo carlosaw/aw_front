@@ -38,7 +38,7 @@
           <td style="text-align: center">{{$item->email}}</td>
           <td>
             <a href="{{ route('clients.edit', ['id' => $item->id]) }}">[ Editar ]</a> - 
-            <a href="{{ route('clients.del', ['id' => $item->id]) }}">[ Excluir ]</a>
+            <a href="{{ route('clients.del', ['id' => $item->id]) }}" onclick="confirm('Tem certeza que quer excluir este Cliente?')">[ Excluir ]</a>
           </td>
         </tr>        
       @endforeach     

@@ -34,9 +34,8 @@ class ClientsController extends Controller
                 'email' => $email
             ]);
 
-            return redirect()
-            ->route('clients.list')
-            ->with('success', 'Cliente adicionado com sucesso!');;
+            return redirect()->route('clients.list');
+            
         } else {
             return redirect()
             ->route('clients.add')
@@ -74,9 +73,8 @@ class ClientsController extends Controller
                 'email' => $email
             ]);
             // Volta pra Lista 
-            return redirect()
-            ->route('clients.list')
-            ->with('success', 'Cliente editado com sucesso!');
+            return redirect()->route('clients.list');
+            
         } else {
             return redirect()
             ->route('clients.edit', ['id' => $id])
@@ -89,18 +87,9 @@ class ClientsController extends Controller
             'id' => $id
         ]);
         // Volta pra Lista
-        return redirect()
-        ->route('clients.list')
-        ->with('success', 'Cliente excluído com sucesso!');
+        return redirect()->route('clients.list');
+        
     }
 
-    public function store(Request $request){
-        $data = $request->all();
-        if(!empty($data['titulo'])){
-            $tarefa = $this->tarefa->create($data);
-            return redirect()->route('tarefas.index')->with('success', 'Registro salvo');
-        } else {
-            return redirect()->route('tarefas.create')->with('warning', 'Campos obrigatórios');
-        }
-    }
+    // 
 }

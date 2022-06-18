@@ -36,9 +36,8 @@ class ProductsController extends Controller
                 'total' => $total
             ]);
             
-            return redirect()
-            ->route('products.list')
-            ->with('success', 'Produto adicionado com sucesso!');
+            return redirect()->route('products.list');
+            
         } else {
             return redirect()
             ->route('products.add')
@@ -78,9 +77,8 @@ class ProductsController extends Controller
                 'total' => $total
             ]);
             // Volta pra Lista
-            return redirect()
-            ->route('products.list')
-            ->with('success', 'Produto editado com sucesso!!');
+            return redirect()->route('products.list');
+            
         } else {
             return redirect()
             ->route('products.edit', ['id' => $id])
@@ -93,18 +91,8 @@ class ProductsController extends Controller
             'id' => $id
         ]);
         // Volta pra Lista
-        return redirect()
-        ->route('products.list')
-        ->with('success', 'Produto excluído com sucesso!');
+        return redirect()->route('products.list');
+        
     }
 
-    public function store(Request $request){
-        $data = $request->all();
-        if(!empty($data['titulo'])){
-            $tarefa = $this->tarefa->create($data);
-            return redirect()->route('tarefas.index')->with('success', 'Registro salvo');
-        } else {
-            return redirect()->route('tarefas.create')->with('warning', 'Campos obrigatórios');
-        }
-    }
 }
