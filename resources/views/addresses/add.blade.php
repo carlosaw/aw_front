@@ -5,17 +5,17 @@
 @section('content')
   <h1>Adição de Endereço</h1>
 
-    @if(session('warning'))
-      <div class="alert alert-danger">
-        {{session('warning')}}
-      </div>
-    @endif
     
-    @if(session('success'))
+
+    {{-- @if(session('success'))
       <div class="alert alert-success">
         {{session('success')}}
       </div>
-    @endif
+    @elseif(session('warning'))
+      <div class="alert alert-warning">
+        {{session('warning')}}
+      </div>
+    @endif --}}
     
     <form method="POST">
       @csrf
