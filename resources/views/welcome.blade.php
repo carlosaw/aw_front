@@ -9,8 +9,12 @@
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
         <link rel="stylesheet" href="{{ asset('site/style.css') }}" />
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.0/sweetalert.min.js"></script>
+
         <!-- Styles -->
         <style>
+            
             html, body {
                 background-color: #fff;
                 color: #636b6f;
@@ -64,6 +68,7 @@
         </style>
     </head>
     <body>
+        
         <button class="btn btn-lg btn-orange">Bootstrap OK</button>
         <div class="flex-center position-ref full-height">
             @if (Route::has('login'))

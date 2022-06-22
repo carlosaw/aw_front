@@ -36,7 +36,8 @@ class ProductsController extends Controller
                 'total' => $total
             ]);
             
-            return redirect()->route('products.list');
+            return redirect()->route('products.list')
+            ->with('success', 'Produto adicionado!');
             
         } else {
             return redirect()

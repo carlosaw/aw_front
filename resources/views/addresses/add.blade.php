@@ -7,7 +7,7 @@
 
     
 
-    {{-- @if(session('success'))
+    @if(session('success'))
       <div class="alert alert-success">
         {{session('success')}}
       </div>
@@ -15,7 +15,7 @@
       <div class="alert alert-warning">
         {{session('warning')}}
       </div>
-    @endif --}}
+    @endif
     
     <form method="POST">
       @csrf

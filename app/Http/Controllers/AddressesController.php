@@ -37,7 +37,8 @@ class AddressesController extends Controller
                 'state' => $state
             ]);
 
-            return redirect()->route('addresses.list');
+            return redirect()->route('addresses.list')
+            ->with('success', '✔ Endereço adicionado com sucesso!');
             
         } else {
             return redirect()
@@ -79,7 +80,8 @@ class AddressesController extends Controller
                 'state' => $state
             ]);
             // Volta pra lista
-            return redirect()->route('addresses.list');
+            return redirect()->route('addresses.list')
+            ->with('success', '✔ Endereço atualizado com sucesso!');
             
         } else {
             return redirect()
@@ -93,7 +95,7 @@ class AddressesController extends Controller
             'id' => $id
         ]);
         // Volta pra Lista
-        return redirect()->route('addresses.list');
+        return redirect()->route('addresses.list')->with('success', '❌ Endereço excluído com sucesso!');
         
     }
     

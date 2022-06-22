@@ -6,8 +6,7 @@
   <h1>Lista de Endereços</h1>
 
   
-
-  {{-- @if(session('success'))
+  @if(session('success'))
     <div class="alert alert-success">
       {{session('success')}}
     </div>
@@ -17,7 +16,7 @@
     <div class="alert alert-danger">
       {{session('danger')}}
     </div>
-  @endif --}}
+  @endif
 
   <a href="{{ route('addresses.add') }}">
     <button class="btn btn-sm btn-primary">Adicionar</button>
@@ -44,8 +43,9 @@
              - <a href=""><img src="assets/images/del.jpg" class="image"/></a>
           </td>--}}
           <td>
-            <a href="{{ route('addresses.edit', ['id' => $item->id]) }}">[ Editar ]</a> - 
-            <a href="{{ route('addresses.del', ['id' => $item->id]) }}" onclick="confirm('Tem certeza que deseja excluir este Endereço?')">[ Excluir ]</a>
+            <a href="{{ route('addresses.edit', ['id' => $item->id]) }}" class="edit"   <span data-tooltip="Editar"><img src="../../assets/images/edit.png" width="25" alt="0" /></span></a> | 
+            <a href="{{ route('addresses.del', ['id' => $item->id]) }}" onclick="confirm('Tem certeza que deseja excluir este Endereço?')" class="del" <span data-tooltip="Deletar"><img src="../../assets/images/del.jpg" width="25" alt="0" /></span>
+            </a>
           </td>
         </tr>        
       @endforeach     

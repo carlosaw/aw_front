@@ -73,12 +73,12 @@ class ClientsController extends Controller
                 'email' => $email
             ]);
             // Volta pra Lista 
-            return redirect()->route('clients.list');
+            return redirect()->route('clients.list')
+            ->with('success', 'OK!');
             
         } else {
             return redirect()
-            ->route('clients.edit', ['id' => $id])
-            ->with('warning', 'Preencha todos os campos!');
+            ->route('clients.edit', ['id' => $id]);
         }
     }
     
