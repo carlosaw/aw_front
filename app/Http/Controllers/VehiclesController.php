@@ -101,6 +101,5 @@ class VehiclesController extends Controller
         return redirect()->route('vehicles.list')
         ->with('danger', '❌ Veículo excluído com sucesso!');
     }
-        
-    //
+      
 }

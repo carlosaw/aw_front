@@ -19,26 +19,27 @@
       @csrf
       <div class="form-group">
         <label for="street_num">Rua e Número</label>
-          <input type="text" class="form-control" id="street_num" name="street_num">
+          <input type="text" class="form-control" id="street_num" name="street_num" 
+          value="{{old('street_num')}}">
       </div>
       <div class="form-group">
         <label for="cep">Cep</label>
-          <input type="text" class="form-control" id="cep" name="cep">
+          <input type="text" class="form-control" id="cep" name="cep" value="{{old('cep')}}">
       </div>
 
       <div class="form-group">
         <label for="district">Bairro</label>
-          <input type="text" class="form-control" id="district" name="district">
+          <input type="text" class="form-control" id="district" name="district" value="{{old('district')}}">
       </div>
 
       <div class="form-group">
         <label for="city">Cidade</label>
-          <input type="text" class="form-control" id="city" name="city">
+          <input type="text" class="form-control" id="city" name="city" value="{{old('city')}}">
       </div>
 
       <div class="form-group">
         <label for="state">Estado</label>
-          <input type="text" class="form-control" id="state" name="state">
+          <input type="text" class="form-control" id="state" name="state" value="{{old('state')}}">
       </div>
 
       <input class="btn btn-sm btn-primary" type="submit" value="Adicionar" />

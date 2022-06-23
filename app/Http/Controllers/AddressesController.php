@@ -43,7 +43,8 @@ class AddressesController extends Controller
         } else {
             return redirect()
             ->route('addresses.add')
-            ->with('warning', '⚡ Preencha todos os campos!');
+            ->with('warning', '⚡ Preencha todos os campos!')
+            ->withInput();
         }
     }
     public function edit($id) {
