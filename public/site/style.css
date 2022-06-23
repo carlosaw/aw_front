@@ -1798,9 +1798,10 @@ pre code {
 
 .table th,
 .table td {
-  padding: 0.75rem;
   vertical-align: top;
-  border-top: 1px solid #dee2e6;
+  padding-bottom: 5px;
+  padding-top: 5px;
+  padding-left: 22px;
 }
 
 .table thead th {
@@ -2736,6 +2737,8 @@ fieldset:disabled a.btn {
   color: #fff;
   background-color: #007bff;
   border-color: #007bff;
+  padding: 1px 5px;
+  font-size: 12px;
 }
 
 .btn-primary:hover {
@@ -2859,6 +2862,9 @@ fieldset:disabled a.btn {
   color: #fff;
   background-color: #17a2b8;
   border-color: #17a2b8;
+  color: #fff;   
+  padding: 1px 5px;
+  font-size: 12px;
 }
 
 .btn-info:hover {
@@ -2941,6 +2947,8 @@ fieldset:disabled a.btn {
   color: #fff;
   background-color: #ff4136;
   border-color: #ff4136;
+  padding: 1px 5px;
+  font-size: 12px;
 }
 
 .btn-danger:hover {
@@ -5747,9 +5755,9 @@ a.badge-orange.focus {
 .alert-success {
   font-size: 14px;
   float: right;   
-  color: #40d011;
+  color: #006400;
   padding: 4px;
-  border: 1px solid #00FF00;
+  border: 1px solid #2E8B57;
 }
 
 
@@ -5802,10 +5810,14 @@ a.badge-orange.focus {
 }
 
 .alert-warning {
-  color: #856404;
-  background-color: #fff3cd;
-  border-color: #ffeeba;
+  font-size: 14px;
+  float: right;
+  color: #B22222;
+  padding: 4px;
+  border: 1px solid #d39e00;
+  z-index: 999;
 }
+
 
 .alert-warning hr {
   border-top-color: #ffe8a1;

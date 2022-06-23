@@ -5,14 +5,12 @@
 @section('content')
   <h1>Adição de Endereço</h1>
 
-    
-
     @if(session('success'))
-      <div class="alert alert-success">
+      <div class="alert alert-success" id="success">
         {{session('success')}}
       </div>
     @elseif(session('warning'))
-      <div class="alert alert-warning">
+      <div class="alert alert-warning" id="warning">
         {{session('warning')}}
       </div>
     @endif
@@ -43,7 +41,7 @@
           <input type="text" class="form-control" id="state" name="state">
       </div>
 
-      <input class="btn btn-primary" type="submit" value="Adicionar" />
+      <input class="btn btn-sm btn-primary" type="submit" value="Adicionar" />
     </form>
     <hr/>
   

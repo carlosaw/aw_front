@@ -24,5 +24,6 @@
     <script src="{{ asset('site/bootstrap.js') }}"></script>
 
     <script type="text/javascript" src="{{ asset('site/js/script.js') }}"></script>
+    
 </body>
 </html>

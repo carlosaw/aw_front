@@ -37,12 +37,12 @@ class ProductsController extends Controller
             ]);
             
             return redirect()->route('products.list')
-            ->with('success', 'Produto adicionado!');
+            ->with('success', '✔ Produto adicionado com sucesso!');
             
         } else {
             return redirect()
             ->route('products.add')
-            ->with('warning', 'Preencha todos os campos!');
+            ->with('warning', '⚡ Preencha todos os campos2!');
         }
     }
 
@@ -78,12 +78,13 @@ class ProductsController extends Controller
                 'total' => $total
             ]);
             // Volta pra Lista
-            return redirect()->route('products.list');
+            return redirect()->route('products.list')
+            ->with('success', '✔ Produto atualizado com sucesso!');
             
         } else {
             return redirect()
             ->route('products.edit', ['id' => $id])
-            ->with('warning', 'Preencha todos os campos!');
+            ->with('warning', '⚡ Preencha todos os campos!');
         }
     }
 
@@ -92,7 +93,8 @@ class ProductsController extends Controller
             'id' => $id
         ]);
         // Volta pra Lista
-        return redirect()->route('products.list');
+        return redirect()->route('products.list')
+        ->with('danger', '❌ Produto excluído com sucesso!');
         
     }
 

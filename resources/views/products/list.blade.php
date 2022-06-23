@@ -6,14 +6,16 @@
   <h1>Lista de Produtos</h1>
 
   @if(session('success'))
-    <div class="alert alert-success">
+    <div class="alert alert-success" id="success">
       {{session('success')}}
     </div>
-  @endif
-
-  @if(session('danger'))
-    <div class="alert alert-danger">
+  @elseif(session('danger'))
+    <div class="alert alert-danger" id="danger">
       {{session('danger')}}
+    </div>
+  @elseif(session('warning'))
+    <div class="alert alert-warning" id="warning">
+      {{session('warning')}}
     </div>
   @endif
 
@@ -22,14 +24,17 @@
   </a>
 
   <table class="table table-striped table-hover">
+    <thead class="thead-dark">
       <tr>
         <th>Nome</th>
         <th>Valor Unitário</th>
         <th>Quantidade</th>
         <th>Desconto</th>
         <th>Total</th>
-        <th>Ações</th>
-      <tr> 
+        <th style="text-align: center">Ações</th>
+      <tr>
+    </thead> 
+
     @if(count($list) > 0)  
       @foreach($list as $item)    
         <tr>
@@ -38,9 +43,13 @@
           <td style="text-align: center">{{ $item->quantity }}</td>
           <td style="text-align: center">{{ $item->discount }}</td>
           <td style="text-align: center">{{ $item->total }}</td>
-          <td>
-            <a href="{{ route('products.edit', ['id' => $item->id]) }}">[ Editar ]</a> - 
-            <a href="{{ route('products.del', ['id' => $item->id]) }}">[ Excluir ]</a>
+          <td style="display: flex; justify-content:space-around">
+            <a href="{{ route('products.edit', ['id' => $item->id]) }}" class="edit"  data-toggle="tooltip" data-html="true">
+              <button class="btn btn-primary">Editar</button>
+            </a>             
+            <a href="{{ route('products.del', ['id' => $item->id]) }}" onclick="confirm('Tem certeza que deseja excluir este Produto?')" data-toggle="tooltip" data-html="true">              
+               <button class="btn btn-danger">Excluir</button>                 
+            </a>
           </td>
         </tr>        
       @endforeach     

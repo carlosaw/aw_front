@@ -4,14 +4,13 @@
 
 @section('content')
   <h1>Adição de Cliente</h1>
-
-  @if(session('warning'))
-    <div class="alert alert-danger">
-      {{session('warning')}}
-    </div>
-  @elseif(session('success'))
-    <div class="alert alert-success">
+  @if(session('success'))
+    <div class="alert alert-success" id="success">
       {{session('success')}}
+    </div>  
+  @elseif(session('warning'))
+    <div class="alert alert-warning" id="warning">
+      {{session('warning')}}
     </div>
   @endif
 

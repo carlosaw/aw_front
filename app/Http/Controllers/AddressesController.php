@@ -43,7 +43,7 @@ class AddressesController extends Controller
         } else {
             return redirect()
             ->route('addresses.add')
-            ->with('warning', 'Preencha todos os campos!');
+            ->with('warning', '⚡ Preencha todos os campos!');
         }
     }
     public function edit($id) {
@@ -95,7 +95,8 @@ class AddressesController extends Controller
             'id' => $id
         ]);
         // Volta pra Lista
-        return redirect()->route('addresses.list')->with('danger', '❌ Endereço excluído com sucesso!');
+        return redirect()->route('addresses.list')
+        ->with('danger', '❌ Endereço excluído com sucesso!');
         
     }
     

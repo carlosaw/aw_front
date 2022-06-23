@@ -34,12 +34,13 @@ class ClientsController extends Controller
                 'email' => $email
             ]);
 
-            return redirect()->route('clients.list');
+            return redirect()->route('clients.list')
+            ->with('success', '✔ Cliente adicionado com sucesso!');
             
         } else {
             return redirect()
             ->route('clients.add')
-            ->with('warning', 'Preencha todos os campos!');
+            ->with('warning', '⚡ Preencha todos os campos!');
         }
     }
 
@@ -74,11 +75,12 @@ class ClientsController extends Controller
             ]);
             // Volta pra Lista 
             return redirect()->route('clients.list')
-            ->with('success', 'OK!');
+            ->with('success', '✔ Cliente atualizado com sucesso!');
             
         } else {
             return redirect()
-            ->route('clients.edit', ['id' => $id]);
+            ->route('clients.edit', ['id' => $id])
+            ->with('warning', '⚡ Não houve modificação!');;
         }
     }
     
@@ -87,7 +89,8 @@ class ClientsController extends Controller
             'id' => $id
         ]);
         // Volta pra Lista
-        return redirect()->route('clients.list');
+        return redirect()->route('clients.list')
+        ->with('danger', '❌ Cliente excluído com sucesso!');
         
     }
 

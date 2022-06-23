@@ -5,14 +5,13 @@
 @section('content')
   <h1>Adição de Produto</h1>
 
-  @if(session('warning'))
-    <div class="alert alert-danger">
-      {{session('warning')}}
-    </div>
-  @endif
   @if(session('success'))
-    <div class="alert alert-success">
+    <div class="alert alert-success" id="success">
       {{session('success')}}
+    </div>
+  @elseif(session('warning'))
+    <div class="alert alert-warning" id="warning">
+      {{session('warning')}}
     </div>
   @endif
   

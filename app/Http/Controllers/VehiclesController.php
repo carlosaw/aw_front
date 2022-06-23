@@ -39,12 +39,13 @@ class VehiclesController extends Controller
                 'km' => $km
             ]);
             
-            return redirect()->route('vehicles.list');
+            return redirect()->route('vehicles.list')
+            ->with('success', '✔ Veículo adicionado com sucesso!');
             
         } else {
             return redirect()
             ->route('vehicles.add')
-            ->with('warning', 'Preencha todos os campos!');
+            ->with('warning', '⚡ Preencha todos os campos!');
         }
     }
 
@@ -82,12 +83,13 @@ class VehiclesController extends Controller
                 'km' => $km
             ]);
             // Volta pra lista
-            return redirect()->route('vehicles.list');
+            return redirect()->route('vehicles.list')
+            ->with('success', '✔ Veículo atualizado com sucesso!');
             
         } else {
             return redirect()
             ->route('vehicles', ['id' => $id])
-            ->with('warning', 'Preencha todos os campos!');
+            ->with('warning', '⚡ Preencha todos os campos!');
         }
     }
 
@@ -96,7 +98,8 @@ class VehiclesController extends Controller
             'id' => $id
         ]);
         // Volta pra Lista
-        return redirect()->route('vehicles.list');
+        return redirect()->route('vehicles.list')
+        ->with('danger', '❌ Veículo excluído com sucesso!');
     }
         
     //

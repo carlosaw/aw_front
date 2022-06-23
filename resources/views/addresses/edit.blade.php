@@ -4,18 +4,6 @@
 
 @section('content')
   <h1>Edição de Endereço</h1>
-
-  
-
-  {{-- @if(session('warning'))
-    <div class="alert alert-danger">
-      {{session('warning')}}
-    </div>
-  @elseif(session('success'))
-    <div class="alert alert-success">
-      {{session('success')}}
-    </div>
-  @endif --}}
     
     <form method="POST">
       @csrf
@@ -48,7 +36,7 @@
           value="{{ $data->state }}">
       </div>
 
-      <input class="btn btn-primary" type="submit" value="Salvar" />
+      <input class="btn btn-sm btn-primary" type="submit" value="Salvar" />
     </form>
     <hr/>
   

@@ -4,17 +4,18 @@
 
 @section('content')
   <h1>Lista de Endereços</h1>
-
   
   @if(session('success'))
-    <div class="alert alert-success">
+    <div class="alert alert-success" id="success">
       {{session('success')}}
     </div>
-  @endif
-
-  @if(session('danger'))
-    <div class="alert alert-danger">
+  @elseif(session('danger'))
+    <div class="alert alert-danger" id="danger">
       {{session('danger')}}
+    </div>
+  @elseif(session('warning'))
+    <div class="alert alert-warning" id="warning">
+      {{session('warning')}}
     </div>
   @endif
 
@@ -45,14 +46,12 @@
 
           <td style="display: flex; justify-content:space-around">
 
-            <a href="{{ route('addresses.edit', ['id' => $item->id]) }}" class="edit"  data-toggle="tooltip" data-html="true" title="Editar">              
-              ✏
-            </a> 
-            
-            <a href="{{ route('addresses.del', ['id' => $item->id]) }}" onclick="confirm('Tem certeza que deseja excluir este Endereço?')" data-toggle="tooltip" data-html="true" title="Excluir">              
-               ❌                 
+            <a href="{{ route('addresses.edit', ['id' => $item->id]) }}" class="edit"  data-toggle="tooltip" data-html="true">
+              <button class="btn btn-primary">Editar</button>
+            </a>             
+            <a href="{{ route('addresses.del', ['id' => $item->id]) }}" onclick="confirm('Tem certeza que deseja excluir este Endereço?')" data-toggle="tooltip" data-html="true">              
+               <button class="btn btn-danger">Excluir</button>                 
             </a>
-
           </td>
 
         </tr>        

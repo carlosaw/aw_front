@@ -4,16 +4,6 @@
 
 @section('content')
   <h1>Edição de Produto</h1>
-
-  @if(session('warning'))
-    <div class="alert alert-danger">
-      {{session('warning')}}
-    </div>
-  @elseif(session('success'))
-    <div class="alert alert-success">
-      {{session('success')}}
-    </div>
-  @endif
   
   <form method="POST">
     @csrf
