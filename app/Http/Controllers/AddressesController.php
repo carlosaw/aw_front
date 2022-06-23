@@ -95,7 +95,7 @@ class AddressesController extends Controller
             'id' => $id
         ]);
         // Volta pra Lista
-        return redirect()->route('addresses.list')->with('success', '❌ Endereço excluído com sucesso!');
+        return redirect()->route('addresses.list')->with('danger', '❌ Endereço excluído com sucesso!');
         
     }
     

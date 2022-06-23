@@ -15,8 +15,9 @@ h1 {
 footer {
   text-align: center;
 }
-
-
+.edit {
+  z-index: 999;
+}
 
 
 
@@ -192,7 +193,7 @@ a {
 
 a:hover {
   color: #0056b3;
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 a:not([href]):not([class]) {
@@ -599,6 +600,13 @@ pre code {
   margin-right: auto;
   margin-left: auto;
 }
+
+
+
+
+
+
+
 
 @media (min-width: 576px) {
   .container-sm,
@@ -5738,9 +5746,13 @@ a.badge-orange.focus {
 
 .alert-success {
   font-size: 14px;
-  float: right;
-  color: #34ce57;
+  float: right;   
+  color: #40d011;
+  padding: 4px;
+  border: 1px solid #00FF00;
 }
+
+
 .title {
   color: red;
 }
@@ -5804,11 +5816,11 @@ a.badge-orange.focus {
 }
 
 .alert-danger {
-  color: #85221c;
-  background-color: #ffd9d7;
-  border-color: #ffcac7;
-  text-align: center;
-  font-size: 24px;
+  font-size: 14px;
+  float: right;   
+  color: red;
+  padding: 4px;
+  border: 1px solid #ff1944;
 }
 
 .alert-danger hr {

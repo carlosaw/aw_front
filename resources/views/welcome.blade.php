@@ -10,8 +10,7 @@
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
         <link rel="stylesheet" href="{{ asset('site/style.css') }}" />
 
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.0/sweetalert.min.js"></script>
-
+        
         <!-- Styles -->
         <style>
             
@@ -105,5 +104,7 @@
 
     <script src="{{ asset('site/jquery.js') }}"></script>
     <script src="{{ asset('site/bootstrap.js') }}"></script>
+    
+    <script type="text/javascript" src="{{ asset('site/js/script.js') }}"></script>
     </body>
 </html>

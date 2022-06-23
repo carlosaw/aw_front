@@ -3,15 +3,9 @@
 <head>
     <title>@yield('title') - AW Laravel</title>
     <link rel="stylesheet" href="{{ asset('site/style.css') }}" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.0/sweetalert.min.js"></script>
+    
 </head>
 <body>
-
-    {{-- <script>
-        swal("Here's a titlel", "Here's some text", "success", {
-          button: "I am new button",          
-        });
-    </script> --}}
 
 <div class="container">
     <header>
@@ -24,8 +18,11 @@
     <footer>
         Rodapé
     </footer>
+    
+</div>
     <script src="{{ asset('site/jquery.js') }}"></script>
     <script src="{{ asset('site/bootstrap.js') }}"></script>
-</div>
+
+    <script type="text/javascript" src="{{ asset('site/js/script.js') }}"></script>
 </body>
 </html>

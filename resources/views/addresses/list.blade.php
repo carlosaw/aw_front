@@ -23,14 +23,17 @@
   </a>
   
   <table class="table table-striped table-hover">
+    <thead class="thead-dark">
       <tr>
         <th>Rua, número</th>
-        <th>cep</th>
+        <th>CEP</th>
         <th>Bairro</th>
         <th>Cidade</th>
         <th>Estado</th>
-        <th>Ações</th>
+        <th style="text-align: center">Ações</th>
       <tr> 
+    </thead>  
+    
     @if(count($list) > 0) 
       @foreach($list as $item)    
         <tr>
@@ -39,14 +42,19 @@
           <td>{{$item->district}}</td>
           <td>{{$item->city}}</td>
           <td>{{$item->state}}</td>
-          {{-- <td><a href=""><img src="assets/images/edit.png" class="image"/></a>
-             - <a href=""><img src="assets/images/del.jpg" class="image"/></a>
-          </td>--}}
-          <td>
-            <a href="{{ route('addresses.edit', ['id' => $item->id]) }}" class="edit"   <span data-tooltip="Editar"><img src="../../assets/images/edit.png" width="25" alt="0" /></span></a> | 
-            <a href="{{ route('addresses.del', ['id' => $item->id]) }}" onclick="confirm('Tem certeza que deseja excluir este Endereço?')" class="del" <span data-tooltip="Deletar"><img src="../../assets/images/del.jpg" width="25" alt="0" /></span>
+
+          <td style="display: flex; justify-content:space-around">
+
+            <a href="{{ route('addresses.edit', ['id' => $item->id]) }}" class="edit"  data-toggle="tooltip" data-html="true" title="Editar">              
+              ✏
+            </a> 
+            
+            <a href="{{ route('addresses.del', ['id' => $item->id]) }}" onclick="confirm('Tem certeza que deseja excluir este Endereço?')" data-toggle="tooltip" data-html="true" title="Excluir">              
+               ❌                 
             </a>
+
           </td>
+
         </tr>        
       @endforeach     
     </table>  
