@@ -68,15 +68,6 @@ class AddressesController extends Controller
             $city = $request->input('city');
             $state = $request->input('state');
 
-            // Muda no banco
-            // $a = Address::find($id);
-            // $a->street_num = $street_num;
-            // $a->cep = $cep;
-            // $a->district = $district;
-            // $a->city = $city;
-            // $a->state = $state;
-            // $a->save();
-
             Address::find($id)->update([
                 'street_num' => $street_num,
                 'cep' => $cep,
@@ -97,6 +88,7 @@ class AddressesController extends Controller
 
     public function del($id) {
         Address::find($id)->delete();
+        
         return redirect()->route('addresses.list')
         ->with('danger', '❌ Endereço excluído com sucesso!');        
     }
