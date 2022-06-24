@@ -4,13 +4,13 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
+use App\Vehicle;
 
 class VehiclesController extends Controller
 {
     //
     public function list() {
-        $list = DB::select('SELECT * FROM vehicles');
-
+        $list = Vehicle::all();
         return view('vehicles.list', [
             'list' => $list
         ]);

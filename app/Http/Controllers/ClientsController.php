@@ -4,12 +4,13 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
+use App\Client;
 
 class ClientsController extends Controller
 {
     //
     public function list() {
-        $list = DB::select('SELECT * FROM clients');
+        $list = Client::all();
         return view('clients.list', [
             'list' => $list
         ]);

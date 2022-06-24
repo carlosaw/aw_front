@@ -4,13 +4,13 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
+use App\Address;
 
 class AddressesController extends Controller
 {
     //
     public function list() {
-        $list = DB::select('SELECT * FROM addresses');
-
+        $list = Address::all();
         return view('addresses.list', [
             'list' => $list
         ]);
@@ -28,14 +28,22 @@ class AddressesController extends Controller
             $city = $request->input('city');
             $state = $request->input('state');
 
-            DB::insert('INSERT INTO addresses (street_num, cep, district, city, state)
-            VALUES (:street_num, :cep, :district, :city, :state)', [
-                'street_num' => $street_num,
-                'cep' => $cep,
-                'district' => $district,
-                'city' => $city,
-                'state' => $state
-            ]);
+            $a = new Address;
+            $a->street_num = $street_num;
+            $a->cep = $cep;
+            $a->district = $district;
+            $a->city = $city;
+            $a->state = $state;
+            $a->save();
+            
+            // DB::insert('INSERT INTO addresses (street_num, cep, district, city, state)
+            // VALUES (:street_num, :cep, :district, :city, :state)', [
+            //     'street_num' => $street_num,
+            //     'cep' => $cep,
+            //     'district' => $district,
+            //     'city' => $city,
+            //     'state' => $state
+            // ]);
 
             return redirect()->route('addresses.list')
             ->with('success', '✔ Endereço adicionado com sucesso!');
@@ -87,7 +95,7 @@ class AddressesController extends Controller
         } else {
             return redirect()
             ->route('addresses.edit', ['id' => $id])
-            ->with('warning', 'Preencha todos os campos!');
+            ->with('warning', '⚡ Preencha todos os campos!');
         }
     }
 

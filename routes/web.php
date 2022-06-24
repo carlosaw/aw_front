@@ -25,7 +25,7 @@ Route::get('/login', 'Auth\LoginController@index')->name('login');
 
 Route::prefix('/addresses')->group(function(){
     Route::get('/', 'AddressesController@list')->name('addresses.list'); // Listagem de CLIENTES
-
+    
     Route::get('add', 'AddressesController@add')->name('addresses.add'); // Tela de adição de CLIENTE
     Route::post('add', 'AddressesController@addAction'); // Ação de adição CLIENTE
 

@@ -4,13 +4,13 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
+use App\Product;
 
 class ProductsController extends Controller
 {
     //
     public function list() {
-        $list = DB::select('SELECT * FROM products');
-
+        $list = Product::all();
         return view('products.list', [
             'list' => $list
         ]);
