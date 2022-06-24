@@ -18,7 +18,7 @@
     @csrf
     <div class="form-group">
       <label for="name">Nome Completo</label>
-        <input type="text" class="form-control" id="name" name="name">
+        <input type="text" class="form-control" id="name" name="name" autofocus="autofocus">
     </div>
     <div class="form-group">
       <label for="cpf">Cpf</label>

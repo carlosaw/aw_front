@@ -10,7 +10,7 @@
     <div class="form-group">
       <label for="name">Nome</label>
         <input type="text" class="form-control" id="name" name="name" 
-        value="{{ $data->name }}">
+        value="{{ $data->name }}" autofocus="autofocus">
     </div>
     <div class="form-group">
       <label for="value_unit">Valor Unit.</label>

@@ -8,4 +8,11 @@ class Address extends Model
 {
     public $timestamps = false;
 
+    protected $fillable = [
+        'street_num',
+        'cep',
+        'district',
+        'city',
+        'state'
+    ];
 }

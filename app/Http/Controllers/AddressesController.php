@@ -21,6 +21,7 @@ class AddressesController extends Controller
     }
 
     public function addAction(Request $request) {
+            
         if($request->filled('street_num', 'cep', 'district', 'city', 'state')) {
             $street_num = $request->input('street_num');
             $cep = $request->input('cep');
@@ -35,15 +36,6 @@ class AddressesController extends Controller
             $a->city = $city;
             $a->state = $state;
             $a->save();
-            
-            // DB::insert('INSERT INTO addresses (street_num, cep, district, city, state)
-            // VALUES (:street_num, :cep, :district, :city, :state)', [
-            //     'street_num' => $street_num,
-            //     'cep' => $cep,
-            //     'district' => $district,
-            //     'city' => $city,
-            //     'state' => $state
-            // ]);
 
             return redirect()->route('addresses.list')
             ->with('success', '✔ Endereço adicionado com sucesso!');
@@ -56,13 +48,11 @@ class AddressesController extends Controller
         }
     }
     public function edit($id) {
-        $data = DB::select('SELECT * FROM addresses WHERE id = :id',[
-            'id' => $id
-        ]);
+        $data = Address::find($id);
 
-        if(count($data) > 0) {// Se tiver manda pra edit
+        if($data) {// Se tiver manda pra edit
             return view('addresses.edit', [
-                'data' => $data[0]// Manda o primeiro item
+                'data' => $data// Manda o primeiro item
             ]);
         } else {// Senão retorna pra lista
             return redirect()->route('addresses.list');
@@ -71,7 +61,7 @@ class AddressesController extends Controller
     }
 
     public function editAction(Request $request, $id) {
-        if($request->filled('street_num')) {// Pega os inputs
+        if($request->filled('street_num', 'cep', 'district', 'city', 'state')) {// Pega os inputs
             $street_num = $request->input('street_num');
             $cep = $request->input('cep');
             $district = $request->input('district');
@@ -79,11 +69,17 @@ class AddressesController extends Controller
             $state = $request->input('state');
 
             // Muda no banco
-            DB::update('UPDATE addresses SET street_num = :street_num, cep = :cep, district = :district, city = :city, state = :state
-                WHERE id = :id', [
-                'id' => $id,
+            // $a = Address::find($id);
+            // $a->street_num = $street_num;
+            // $a->cep = $cep;
+            // $a->district = $district;
+            // $a->city = $city;
+            // $a->state = $state;
+            // $a->save();
+
+            Address::find($id)->update([
                 'street_num' => $street_num,
-                'cep'  => $cep,
+                'cep' => $cep,
                 'district' => $district,
                 'city' => $city,
                 'state' => $state
@@ -100,13 +96,9 @@ class AddressesController extends Controller
     }
 
     public function del($id) {
-        DB::delete("DELETE FROM addresses WHERE id = :id", [
-            'id' => $id
-        ]);
-        // Volta pra Lista
+        Address::find($id)->delete();
         return redirect()->route('addresses.list')
-        ->with('danger', '❌ Endereço excluído com sucesso!');
-        
+        ->with('danger', '❌ Endereço excluído com sucesso!');        
     }
     
 }

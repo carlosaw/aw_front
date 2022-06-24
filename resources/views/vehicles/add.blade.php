@@ -19,7 +19,7 @@
     @csrf
     <div class="form-group">
       <label for="plate">Placa</label>
-        <input type="text" class="form-control" id="plate" name="plate">
+        <input type="text" class="form-control" id="plate" name="plate" autofocus="autofocus">
     </div>
     <div class="form-group">
       <label for="brand">Marca</label>

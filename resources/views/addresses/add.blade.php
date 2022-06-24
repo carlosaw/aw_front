@@ -20,7 +20,7 @@
       <div class="form-group">
         <label for="street_num">Rua e Número</label>
           <input type="text" class="form-control" id="street_num" name="street_num" 
-          value="{{old('street_num')}}">
+          value="{{old('street_num')}}" autofocus="autofocus">
       </div>
       <div class="form-group">
         <label for="cep">Cep</label>

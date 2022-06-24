@@ -10,7 +10,7 @@
     <div class="form-group">
       <label for="plate">Placa</label>
         <input type="text" class="form-control" id="plate" name="plate" 
-        value="{{ $data->plate }}">
+        value="{{ $data->plate }}" autofocus="autofocus">
     </div>
     <div class="form-group">
       <label for="brand">Marca</label>
