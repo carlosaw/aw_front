@@ -13,4 +13,12 @@ class Product extends Model
     // protected $keyType = 'string';
 
     public $timestamps = false;
+
+    protected $fillable = [
+        'name',
+        'value_unit',
+        'quantity',
+        'discount',
+        'total'
+    ];
 }

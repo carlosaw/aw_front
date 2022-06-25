@@ -13,4 +13,13 @@ class Vehicle extends Model
     // protected $keyType = 'string';
 
     public $timestamps = false;
+
+    protected $fillable = [
+        'plate',
+        'brand',
+        'model',
+        'color',
+        'year',
+        'km'
+    ];
 }

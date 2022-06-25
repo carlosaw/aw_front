@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Address;
 
@@ -61,7 +60,8 @@ class AddressesController extends Controller
     }
 
     public function editAction(Request $request, $id) {
-        if($request->filled('street_num', 'cep', 'district', 'city', 'state')) {// Pega os inputs
+        // Pega os dados dos inputs
+        if($request->filled('street_num', 'cep', 'district', 'city', 'state')) {
             $street_num = $request->input('street_num');
             $cep = $request->input('cep');
             $district = $request->input('district');
@@ -88,7 +88,7 @@ class AddressesController extends Controller
 
     public function del($id) {
         Address::find($id)->delete();
-        
+               
         return redirect()->route('addresses.list')
         ->with('danger', '❌ Endereço excluído com sucesso!');        
     }

@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Client;
 
@@ -27,12 +26,12 @@ class ClientsController extends Controller
             $fone = $request->input('fone');
             $email = $request->input('email');
 
-            $a = new Client;
-            $a->name = $name;
-            $a->cpf = $cpf;
-            $a->fone = $fone;
-            $a->email = $email;
-            $a->save();
+            $c = new Client;
+            $c->name = $name;
+            $c->cpf = $cpf;
+            $c->fone = $fone;
+            $c->email = $email;
+            $c->save();
 
             return redirect()->route('clients.list')
             ->with('success', '✔ Cliente adicionado com sucesso!');
@@ -63,12 +62,13 @@ class ClientsController extends Controller
             $fone = $request->input('fone');
             $email = $request->input('email');
 
-            $a = new Client;
-            $a->name = $name;
-            $a->cpf = $cpf;
-            $a->fone = $fone;
-            $a->email = $email;
-            $a->save();
+            // 
+            Client::find($id)->update([
+                'name' => $name,
+                'cpf' => $cpf,
+                'fone' => $fone,
+                'email' => $email
+            ]);
             
             // Volta pra Lista 
             return redirect()->route('clients.list')
@@ -82,9 +82,7 @@ class ClientsController extends Controller
     }
     
     public function del($id) {
-        DB::delete("DELETE FROM clients WHERE id = :id", [
-            'id' => $id
-        ]);
+        Client::find($id)->delete();
         // Volta pra Lista
         return redirect()->route('clients.list')
         ->with('danger', '❌ Cliente excluído com sucesso!');

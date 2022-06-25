@@ -13,4 +13,11 @@ class Client extends Model
     // protected $keyType = 'string';
 
     public $timestamps = false;
+
+    protected $fillable = [
+        'name',
+        'cpf',
+        'fone',
+        'email'
+    ];
 }

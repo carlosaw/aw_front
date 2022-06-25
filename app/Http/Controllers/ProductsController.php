@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Product;
 
@@ -20,6 +19,7 @@ class ProductsController extends Controller
     }
 
     public function addAction(Request $request) {
+        
         if($request->filled('name', 'value_unit', 'quantity', 'discount', 'total')) {
             $name = $request->input('name');
             $value_unit = $request->input('value_unit');
@@ -27,15 +27,14 @@ class ProductsController extends Controller
             $discount = $request->input('discount');
             $total = $request->input('total');
 
-            DB::insert('INSERT INTO products (name, value_unit, quantity, discount, total)
-            VALUES (:name, :value_unit, :quantity, :discount, :total)', [
-                'name' => $name,
-                'value_unit' => $value_unit,
-                'quantity' => $quantity,
-                'discount' => $discount,
-                'total' => $total
-            ]);
-            
+            $p = new Product();
+            $p->name = $name;
+            $p->value_unit = $value_unit;
+            $p->quantity = $quantity;
+            $p->discount = $discount;
+            $p->total = $total;
+            $p->save();
+
             return redirect()->route('products.list')
             ->with('success', '✔ Produto adicionado com sucesso!');
             
@@ -47,13 +46,11 @@ class ProductsController extends Controller
     }
 
     public function edit($id) {
-        $data = DB::select('SELECT * FROM products WHERE id = :id',[
-            'id' => $id
-        ]);
+        $data = Product::find($id);
 
-        if(count($data) > 0) {// Se tiver manda pra edit
+        if($data) {// Se tiver manda pra edit
             return view('products.edit', [
-                'data' => $data[0]// Manda o primeiro item
+                'data' => $data// Manda o primeiro item
             ]);
         } else {// Senão retorna pra lista
             return redirect()->route('products.list');
@@ -69,14 +66,14 @@ class ProductsController extends Controller
             $total = $request->input('total');
 
             // Muda no banco
-            DB::update('UPDATE products SET name = :name, value_unit = :value_unit, quantity = :quantity, discount = :discount, total = :total WHERE id = :id', [
-                'id' => $id,
+            Product::find($id)->update([
                 'name' => $name,
                 'value_unit' => $value_unit,
                 'quantity' => $quantity,
                 'discount' => $discount,
                 'total' => $total
             ]);
+
             // Volta pra Lista
             return redirect()->route('products.list')
             ->with('success', '✔ Produto atualizado com sucesso!');
@@ -89,13 +86,10 @@ class ProductsController extends Controller
     }
 
     public function del($id) {
-        DB::delete("DELETE FROM products WHERE id = :id", [
-            'id' => $id
-        ]);
+        Product::find($id)->delete();
         // Volta pra Lista
         return redirect()->route('products.list')
-        ->with('danger', '❌ Produto excluído com sucesso!');
-        
+        ->with('danger', '❌ Produto excluído com sucesso!');        
     }
 
 }

@@ -23,6 +23,17 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/login', 'Auth\LoginController@index')->name('login');
 
+//Route::resource('todo', 'TodoController');
+/*
+GET - /todo           - index   - todo.index   - LISTA OS ITENS
+GET - /todo/create    - create  - todo.create  - FORM DE CRIAÇÃO
+POST - /todo          - store   - todo.store   - RECEBER OS DADOS E ADD ITEM
+GET - /todo/{id}      - show    - todo.show    - ITEM INDIVIDUAL
+GET - /todo/{id}      - edit    - todo.edit    - FORM DE EDIÇÃO
+PUT - /todo/{id}      - update  - todo.update  - RECEBER OS DADOS E UPDATE ITEM
+DELETE - /todo/{id}   - destroy - todo.destroy - DELETAR O ITEM
+*/
+
 Route::prefix('/addresses')->group(function(){
     Route::get('/', 'AddressesController@list')->name('addresses.list'); // Listagem de CLIENTES
     

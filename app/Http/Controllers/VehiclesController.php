@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Vehicle;
 
@@ -29,15 +28,14 @@ class VehiclesController extends Controller
             $year = $request->input('year');
             $km = $request->input('km');
 
-            DB::insert('INSERT INTO vehicles (plate, brand, model, color, year, km)
-            VALUES (:plate, :brand, :model, :color, :year, :km)', [
-                'plate' => $plate,
-                'brand' => $brand,
-                'model' => $model,
-                'color' => $color,
-                'year' => $year,
-                'km' => $km
-            ]);
+            $v = new Vehicle();
+            $v->plate = $plate;
+            $v->brand = $brand;
+            $v->model = $model;
+            $v->color = $color;
+            $v->year = $year;
+            $v->km = $km;
+            $v->save();
             
             return redirect()->route('vehicles.list')
             ->with('success', '✔ Veículo adicionado com sucesso!');
@@ -50,13 +48,11 @@ class VehiclesController extends Controller
     }
 
     public function edit($id) {
-        $data = DB::select('SELECT * FROM vehicles WHERE id = :id',[
-            'id' => $id
-        ]);
+        $data = Vehicle::find($id);
 
-        if(count($data) > 0) {// Se tiver manda pra edit
+        if($data) {// Se tiver manda pra edit
             return view('vehicles.edit', [
-                'data' => $data[0]// Manda o primeiro item
+                'data' => $data// Manda o primeiro item
             ]);
         } else {// Senão retorna pra lista
             return redirect()->route('vehicles.list');
@@ -73,8 +69,7 @@ class VehiclesController extends Controller
             $km = $request->input('km');
 
             // Muda no banco
-            DB::update('UPDATE vehicles SET plate = :plate, brand = :brand, model = :model, color = :color, year = :year, km = :km WHERE id = :id', [
-                'id' => $id,
+            Vehicle::find($id)->update([
                 'plate' => $plate,
                 'brand' => $brand,
                 'model' => $model,
@@ -82,6 +77,7 @@ class VehiclesController extends Controller
                 'year' => $year,
                 'km' => $km
             ]);
+
             // Volta pra lista
             return redirect()->route('vehicles.list')
             ->with('success', '✔ Veículo atualizado com sucesso!');
@@ -94,9 +90,8 @@ class VehiclesController extends Controller
     }
 
     public function del($id) {
-        DB::delete("DELETE FROM vehicles WHERE id = :id", [
-            'id' => $id
-        ]);
+        Vehicle::find($id)->delete();
+        
         // Volta pra Lista
         return redirect()->route('vehicles.list')
         ->with('danger', '❌ Veículo excluído com sucesso!');
