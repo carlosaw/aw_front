@@ -7,7 +7,7 @@ use App\Address;
 
 class AddressesController extends Controller
 {
-    //
+    // INDEX
     public function list() {
         $list = Address::all();
         return view('addresses.list', [
@@ -15,10 +15,12 @@ class AddressesController extends Controller
         ]);
     }
 
+    // CREATE
     public function add() {
         return view('addresses.add');
     }
 
+    // STORE
     public function addAction(Request $request) {
             
         if($request->filled('street_num', 'cep', 'district', 'city', 'state')) {
@@ -46,6 +48,8 @@ class AddressesController extends Controller
             ->withInput();
         }
     }
+
+    // EDIT
     public function edit($id) {
         $data = Address::find($id);
 
@@ -59,6 +63,7 @@ class AddressesController extends Controller
     
     }
 
+    // UPDATE
     public function editAction(Request $request, $id) {
         // Pega os dados dos inputs
         if($request->filled('street_num', 'cep', 'district', 'city', 'state')) {
@@ -85,7 +90,8 @@ class AddressesController extends Controller
             ->with('warning', '⚡ Preencha todos os campos!');
         }
     }
-
+    
+    // DESTROY
     public function del($id) {
         Address::find($id)->delete();
                

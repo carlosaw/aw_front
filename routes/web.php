@@ -2,17 +2,6 @@
 
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-
 Route::get('/', function () {
     return view('welcome');
 });
@@ -22,16 +11,16 @@ Route::get('/', function () {
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/login', 'Auth\LoginController@index')->name('login');
-
-//Route::resource('todo', 'TodoController');
 /*
-GET - /todo           - index   - todo.index   - LISTA OS ITENS
-GET - /todo/create    - create  - todo.create  - FORM DE CRIAÇÃO
-POST - /todo          - store   - todo.store   - RECEBER OS DADOS E ADD ITEM
-GET - /todo/{id}      - show    - todo.show    - ITEM INDIVIDUAL
-GET - /todo/{id}      - edit    - todo.edit    - FORM DE EDIÇÃO
-PUT - /todo/{id}      - update  - todo.update  - RECEBER OS DADOS E UPDATE ITEM
-DELETE - /todo/{id}   - destroy - todo.destroy - DELETAR O ITEM
+Route::resource('addresses', 'AddressesController');
+
+GET - /todo - index - todo.index - LISTA OS ITENS
+GET - /todo/create - create - todo.create - FORM DE CRIAÇÃO
+POST - /todo - store - todo.store - RECEBER OS DADOS E ADD ITEM
+GET - /todo/{id} - show - todo.show - ITEM INDIVIDUAL
+GET - /todo/{id}/edit - edit - todo.edit - FORM DE EDIÇÃO
+PUT - /todo/{id} - update - todo.update - RECEBER OS DADOS E UPDATE ITEM
+DELETE - /todo/{id} - destroy - todo.destroy - DELETAR O ITEM
 */
 
 Route::prefix('/addresses')->group(function(){
