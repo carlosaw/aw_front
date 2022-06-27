@@ -4,7 +4,9 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
+use Illuminate\Http\Request;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
@@ -26,7 +28,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = RouteServiceProvider::HOME;
+    protected $redirectTo = '/home';
 
     /**
      * Create a new controller instance.
@@ -40,5 +42,23 @@ class LoginController extends Controller
 
     public function index() {
         return view('login');
+    }
+
+    public function authenticate(Request $request) {
+        $creds = $request->only(['email', 'password']);
+
+        if(Auth::attempt($creds)) {
+            return redirect()->route('home');
+        } else {
+            return redirect()
+            ->route('login')
+            ->with('warning', '⚡ E-mail e/ou senha inválidos!')
+            ->withInput();
+        }
+    }
+
+    public function logout() {
+        Auth::logout();
+        return redirect()->route('login');
     }
 }

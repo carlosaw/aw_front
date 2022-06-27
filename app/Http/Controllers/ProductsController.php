@@ -6,7 +6,11 @@ use Illuminate\Http\Request;
 use App\Product;
 
 class ProductsController extends Controller
-{
+{   
+    public function __construct() {
+        $this->middleware('auth');
+    }
+    
     //
     public function list() {
         $list = Product::all();

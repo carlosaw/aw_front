@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 17-Jun-2022 às 22:17
+-- Tempo de geração: 27-Jun-2022 às 21:55
 -- Versão do servidor: 10.4.22-MariaDB
 -- versão do PHP: 7.4.26
 
@@ -41,13 +41,9 @@ CREATE TABLE `addresses` (
 --
 
 INSERT INTO `addresses` (`id`, `street_num`, `cep`, `district`, `city`, `state`) VALUES
-(1, 'Rua Castro Alves, 437', '78125-590', 'Centro', 'Curitiba', 'PR'),
-(2, 'Rua Men de Sá, 61', '78125-650', 'Centro', 'Cuiabá', 'MT'),
-(3, 'Tv. Pedro Pedrossian, 433', '78125-520', 'Centro Norte', 'Cuiabá', 'MT'),
-(4, 'Rua Cantagalo, 4555', '78125-650', 'Centro', 'Cuiabá', 'MT'),
-(5, 'Rua Major Gama, 344', '78150-500', 'Centro', 'V. Grande', 'MT'),
-(6, 'Rua Itapuã, 800', '45125-650', 'Centro', 'Nortelândia', 'MT'),
-(7, 'Travessa Carajás, 678', '45362-250', 'Centro', 'Guarapuava', 'PR');
+(16, 'Rua A, 43', '78125-950', 'Centro', 'City', 'PSo'),
+(25, 'Validator', '781254-650', 'Centro', 'daasd', 'mt'),
+(30, 'Rua Jatobá 2', '45652-655', 'Centro 2', 'Mata Grande2', 'RR');
 
 -- --------------------------------------------------------
 
@@ -69,8 +65,11 @@ CREATE TABLE `clients` (
 --
 
 INSERT INTO `clients` (`id`, `name`, `cpf`, `fone`, `email`, `address_id`) VALUES
-(1, 'Mara Editada', '111.222.333-44', '(65) 9 9981-4563', 'mara2@gmail.com', 1),
-(2, 'Carlos Alberto', '491.238.669-35', '(65) 9 9981-3879', 'carlos@gmail.com', NULL);
+(1, 'Mara Editada', '111.222.333-44', '(65) 9 9981-4563', 'mara2@gmail.com', NULL),
+(7, 'Lourival de Marques', '222.333.666-66', '(65) 9 9982-3569', 'lori@gmail.com', NULL),
+(11, 'Josefina Anaconda', '222.333.444-55', '(65)9 9981-3879', 'josefina@gmail.com', NULL),
+(14, 'Anaconda', '456.689.789-88', '(65)9 9981-3879', 'Ana@gmail.com', NULL),
+(18, 'Anaconda 2', '456.689.789-58', '(65)9 9981-3879', 'Ana2@gmail.com', NULL);
 
 -- --------------------------------------------------------
 
@@ -118,7 +117,8 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (11, '2022_06_05_130910_add_column_vehicle_id_products_table', 1),
 (12, '2022_06_05_134041_create_foreignkey_products_vehicles_products_table', 1),
 (13, '2022_06_06_145117_add_column_client_id_vehicles_table', 1),
-(14, '2022_06_06_145358_create_foreignkey_client_vehicles_vehicles_table', 1);
+(14, '2022_06_06_145358_create_foreignkey_client_vehicles_vehicles_table', 1),
+(15, '2022_06_27_123907_add_column_remember_token_users_table', 2);
 
 -- --------------------------------------------------------
 
@@ -173,8 +173,7 @@ CREATE TABLE `products` (
 INSERT INTO `products` (`id`, `name`, `value_unit`, `quantity`, `discount`, `total`, `vehicle_id`) VALUES
 (1, 'Junta de Cabeçote 2', '128,50', 1, '0,00', '128,50', NULL),
 (2, 'Carburador', '778,00', 1, '0,00', '778,00', NULL),
-(3, 'Junta Coletor de escape', '68,75', 1, '0,00', '68,75', NULL),
-(4, 'Cabeçote usado', '1.200,00', 1, '0,00', '1.250,00', NULL);
+(3, 'Junta Coletor de escape', '68,75', 1, '0,00', '68,75', NULL);
 
 -- --------------------------------------------------------
 
@@ -186,8 +185,16 @@ CREATE TABLE `users` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `token` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
+  `token` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `remember_token` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Extraindo dados da tabela `users`
+--
+
+INSERT INTO `users` (`id`, `email`, `password`, `token`, `remember_token`) VALUES
+(1, 'carlos@gmail.com', '$2y$10$Uj2kx.8Rm2AeJr1OTyXale6fHgg/DU6Sj5Qf9ETpUXmsx4WU.dnJy', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -201,8 +208,8 @@ CREATE TABLE `vehicles` (
   `brand` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `model` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `color` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `year` float NOT NULL DEFAULT 0,
-  `km` float NOT NULL DEFAULT 0,
+  `year` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `km` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
   `client_id` bigint(20) UNSIGNED DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -211,8 +218,8 @@ CREATE TABLE `vehicles` (
 --
 
 INSERT INTO `vehicles` (`id`, `plate`, `brand`, `model`, `color`, `year`, `km`, `client_id`) VALUES
-(1, 'OBC1D85', 'Honda', 'Civic', 'Branca', 2012, 125.652, NULL),
-(2, 'CAP 7896', 'Chevrolet', 'Onix', 'Branca', 2019, 128.521, NULL);
+(1, 'OBC1D85', 'Honda', 'Civic', 'Branca', '2012', '125.652', NULL),
+(2, 'CAP 7896', 'Chevrolet', 'Onix', 'Branca', '2019', '128.521', NULL);
 
 --
 -- Índices para tabelas despejadas
@@ -289,13 +296,13 @@ ALTER TABLE `vehicles`
 -- AUTO_INCREMENT de tabela `addresses`
 --
 ALTER TABLE `addresses`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT de tabela `clients`
 --
 ALTER TABLE `clients`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT de tabela `failed_jobs`
@@ -307,7 +314,7 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT de tabela `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT de tabela `personal_access_tokens`
@@ -319,19 +326,19 @@ ALTER TABLE `personal_access_tokens`
 -- AUTO_INCREMENT de tabela `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de tabela `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de tabela `vehicles`
 --
 ALTER TABLE `vehicles`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- Restrições para despejos de tabelas

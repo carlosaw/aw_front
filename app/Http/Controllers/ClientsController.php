@@ -6,7 +6,11 @@ use Illuminate\Http\Request;
 use App\Client;
 
 class ClientsController extends Controller
-{
+{   
+    public function __construct() {
+        $this->middleware('auth');
+    }
+    
     //
     public function list() {
         $list = Client::all();

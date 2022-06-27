@@ -1,6 +1,10 @@
 @extends('layouts.app')
 
+@section('title', 'Página Home')
+
 @section('content')
+<a href="/logout" style="float: right">Sair</a>
+
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -14,10 +18,11 @@
                         </div>
                     @endif
                         <h1>Página Home</h1>
-                    {{ __('You are logged in!') }}
+                    {{ __('You are logged in!') }} - {{$email}}
                 </div>
             </div>
         </div>
     </div>
 </div>
+
 @endsection

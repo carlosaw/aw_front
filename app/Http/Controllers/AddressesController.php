@@ -6,7 +6,11 @@ use Illuminate\Http\Request;
 use App\Address;
 
 class AddressesController extends Controller
-{
+{   
+    public function __construct() {
+        $this->middleware('auth');
+    }
+    
     // INDEX
     public function list() {
         $list = Address::all();

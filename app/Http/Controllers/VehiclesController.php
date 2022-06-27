@@ -6,7 +6,11 @@ use Illuminate\Http\Request;
 use App\Vehicle;
 
 class VehiclesController extends Controller
-{
+{   
+    public function __construct() {
+        $this->middleware('auth');
+    }
+    
     //
     public function list() {
         $list = Vehicle::all();
