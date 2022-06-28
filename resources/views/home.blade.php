@@ -18,7 +18,7 @@
                         </div>
                     @endif
                         <h1>Página Home</h1>
-                    {{ __('You are logged in!') }} - {{$email}}
+                    {{ __('You are logged in!') }} - <strong>{{$name}}</strong>
                 </div>
             </div>
         </div>

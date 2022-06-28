@@ -25,10 +25,10 @@ class HomeController extends Controller
     {   
         
         $user = $request->user();
-        $email = $user->email;
+        $name = $user->name;
         
         $data = [
-            'email' => $email
+            'name' => $name
         ];
         return view('home', $data);
     }
