@@ -44,7 +44,7 @@
           <td>{{$item->model}}</td>
           <td>{{$item->color}}</td>
           <td>{{$item->year}}</td>
-          <td>{{number_format($item->km, 3,'.', ',').' '.'Km' }}</td>
+          <td>{{ number_format($item->km, 3,'.',',').' '.'Km' }}</td>
           <td style="display: flex; justify-content:space-around">
             <a href="{{ route('vehicles.edit', ['id' => $item->id]) }}" class="edit"  data-toggle="tooltip" data-html="true">
               <button class="btn btn-primary">Editar</button>

@@ -39,10 +39,10 @@
       @foreach($list as $item)    
         <tr>
           <td>{{$item->name}}</td>
-          <td style="text-align: center">{{ $item->value_unit }}</td>
+          <td style="text-align: center">{{  number_format($item->value_unit,2,',','.') }}</td>
           <td style="text-align: center">{{ $item->quantity }}</td>
-          <td style="text-align: center">{{ $item->discount }}</td>
-          <td style="text-align: center">{{ $item->total }}</td>
+          <td style="text-align: center">{{ number_format($item->discount,2,',','.') }}</td>
+          <td style="text-align: center">{{ number_format($item->total,2,',','.') }}</td>
           <td style="display: flex; justify-content:space-around">
             <a href="{{ route('products.edit', ['id' => $item->id]) }}" class="edit"  data-toggle="tooltip" data-html="true">
               <button class="btn btn-primary">Editar</button>

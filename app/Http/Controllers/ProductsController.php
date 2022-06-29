@@ -32,6 +32,7 @@ class ProductsController extends Controller
             $total = $request->input('total');
 
             $p = new Product();
+            
             $p->name = $name;
             $p->value_unit = $value_unit;
             $p->quantity = $quantity;
