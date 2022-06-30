@@ -20,11 +20,15 @@
 </head>
 
 <body>
+  <div class="container">
     <header>
       <div class="header">
         <div class="menu">
+          <a class="logo1" href=""><img src="{{ asset('assets/images/logo.png') }}" width="200" alt="0" /></a>
           <nav>
+            
               <ul>
+                  
                   <li><a href="{{ route('login') }}">Login</a></li>
                   <li><a href="{{ route('register') }}">Register</a></li>
               </ul>
@@ -35,15 +39,14 @@
     
     <div class="content">
         <div class="title m-b-md">
-            <a><img class="logo" src="assets/images/AW4.png" width="245" alt="0" /></a>
+            <a><img class="logo" src="assets/images/aw2.png" /></a>
         </div>
     </div>
 
-
     <footer>
-        ...
+        <h2>Feito com ❤ por Aw2Web.</h2>
     </footer>
-
+  </div>
     <script src="{{ asset('site/jquery.js') }}"></script>
     <script src="{{ asset('site/bootstrap.js') }}"></script>
 
