@@ -25,7 +25,12 @@ header {
   max-width: 1140px;
   height: 60px;
   margin: auto;
+  background-color: #34ce57;
 }
+
+
+
+
 
 footer {
   text-align: center;
@@ -69,7 +74,7 @@ html, body {
 }
 
 .links > a {
-  color: #b8bbbd;
+  color: #000;
   padding: 0 25px;
   font-size: 13px;
   font-weight: 600;
