@@ -24,7 +24,7 @@
     <header>
       <div class="header">
         <div class="menu">
-          <a class="logo1" href=""><img src="{{ asset('assets/images/logo.png') }}" width="200" alt="0" /></a>
+          <a class="logo1" href=""><img src="{{ asset('assets/images/aw2.png') }}" width="200" alt="0" /></a>
           <nav>
             
               <ul>

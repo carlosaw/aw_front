@@ -30,6 +30,7 @@ header {
   display: flex;
   justify-content: flex-end;
 }
+
 .menu ul,
 .menu li {
   list-style: none;
