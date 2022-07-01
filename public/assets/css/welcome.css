@@ -6,7 +6,7 @@
 
 body {
   font-family: 'Nunito', sans-serif;
-  font-weight: 200;
+  font-weight: 600;
 }
 .container {
   max-width: 1140px;
@@ -14,7 +14,8 @@ body {
 }
 
 header {
-  height: 80px;
+  max-height: 80px;
+  overflow: hidden;
 }
 
 .header {
@@ -24,6 +25,10 @@ header {
   height: 80px;
   margin: auto;
   background-color: black;
+}
+.logo1 img {
+  margin-top: 11px;
+  margin-left: 20px;
 }
 .menu {
   flex: 1;
