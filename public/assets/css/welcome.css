@@ -29,7 +29,17 @@ header {
 .logo1 img {
   margin-top: 11px;
   margin-left: 20px;
+  position: relative;
+  border-bottom: 6px solid #000;
 }
+.logo1 img:hover {
+  opacity: 0.9;  
+  border-bottom: 6px solid #B28756;
+}
+.logo {
+  opacity: 0.6;
+}
+
 .menu {
   flex: 1;
   display: flex;
@@ -62,12 +72,9 @@ header {
   color: #B28756;
   border-bottom: 6px solid #B28756;
 }
-.logo1 {
-  position: relative;
-}
 
 .content {
-  background-image: url('../images/motor.png');
+  background-image: url('../images/motor.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -78,7 +85,7 @@ header {
 }
 
 footer {
-  background-color: #000;
+  background-color: rgb(51, 53, 54);
   text-align: center;
   line-height: 80px;
   color: #c2c3c7;

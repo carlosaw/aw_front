@@ -1,49 +1,21 @@
-@charset "UTF-8";
-
-/*!
- * Bootstrap v4.6.1 (https://getbootstrap.com/)
- * Copyright 2011-2021 The Bootstrap Authors
- * Copyright 2011-2021 Twitter, Inc.
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
- */
-.image {
-  width: 30px;
-}
-h1 {
-  text-align: center;
-}
-
-.edit {
-  z-index: 999;
-}
-
-header {
-  height: 60px;
-  background-color: #87e2e2;
-}
-.header {
-  max-width: 1140px;
-  height: 60px;
-  margin: auto;
-  background-color: #34ce57;
-}
 
 
 
 
 
-footer {
-  text-align: center;
-}
 
-html, body {
-  background-color: #fff;
-  color: #636b6f;
-  font-family: 'Nunito', sans-serif;
-  font-weight: 200;
-  height: 100vh;
-  margin: 0;
-}
+
+
+
+
+
+
+
+
+
+
+
+
 
 .full-height {
   height: 100vh;

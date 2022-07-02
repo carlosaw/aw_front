@@ -23,9 +23,10 @@
   <div class="container">
     <header>
       <div class="header">
-        <a class="logo1" href="https://awregulagens.com.br"><img src="{{ asset('assets/images/logo4.png') }}" width="150" alt="0" /></a>
-        <div class="menu">
-          
+        <a class="logo1" href="https://awregulagens.com.br" title="Visite o site">
+          <img src="{{ asset('assets/images/logo4.png') }}" width="150" alt="0" />
+        </a>
+        <div class="menu">          
           <nav>            
             <ul>                  
               <li><a href="{{ route('login') }}">Login</a></li>
@@ -43,7 +44,7 @@
     </div>
 
     <footer>
-        <h2>Feito com 💖 por Aw2Web.</h2>
+        Copyriht@Todos os direitos reservados!
     </footer>
   </div>
     <script src="{{ asset('site/jquery.js') }}"></script>
