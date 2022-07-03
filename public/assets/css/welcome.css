@@ -7,9 +7,10 @@
 body {
   font-family: 'Nunito', sans-serif;
   font-weight: 600;
+  background-color: rgb(51, 53, 54);
 }
 .container {
-  max-width: 1140px;
+  max-width: 1700px;
   margin: auto;
 }
 
@@ -24,7 +25,7 @@ header {
   align-items: center;
   height: 80px;
   margin: auto;
-  background-color: black;
+  background-color: rgb(51, 53, 54);
 }
 .logo1 img {
   margin-top: 11px;
@@ -82,7 +83,24 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 }
+
+.face {
+  width: 40px;
+  border-radius: 7px;
+}
+.face:hover {
+  opacity: 0.8;
+}
+.youtube {
+  width: 40px;
+  margin-left: 20px;
+}
+.youtube:hover {
+  opacity: 0.8;
+}
+
 
 footer {
   background-color: rgb(51, 53, 54);

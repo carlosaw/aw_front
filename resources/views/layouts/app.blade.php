@@ -3,16 +3,18 @@
 <head>
     <title>@yield('title') - AW Laravel</title>
     <link rel="stylesheet" href="{{ asset('site/style.css') }}" />
-    
+    <link rel="stylesheet" href="{{ asset('assets/css/login.css') }}" />
 </head>
 <body>
 
 <div class="container">
+  
     <header>
-        <div class="header">
+      <div class="header">
         <a class="logo1" href="https://awregulagens.com.br" title="Visite o site">
           <img src="{{ asset('assets/images/logo4.png') }}" width="150" alt="0" />
         </a>
+              
         <div class="menu">          
           <nav>            
             <ul>            
@@ -24,12 +26,14 @@
             </ul>
           </nav>
         </div>
+        
       </div>
     </header>
-    
+
     <section>
         @yield('content')
     </section>
+    
     <footer>
         Rodapé
     </footer>
