@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>@yield('title') - AW Laravel</title>
+    <title>@yield('title') - AW</title>
     <link rel="stylesheet" href="{{ asset('site/style.css') }}" />
     <link rel="stylesheet" href="{{ asset('assets/css/login.css') }}" />
 </head>
@@ -33,10 +33,12 @@
     <section>
         @yield('content')
     </section>
+    <section>
+      <footer>
+        Copyriht@Todos os direitos reservados!
+      </footer>
+    </section>
     
-    <footer>
-        Rodapé
-    </footer>
     
 </div>
     <script src="{{ asset('site/jquery.js') }}"></script>
