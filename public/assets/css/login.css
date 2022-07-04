@@ -26,6 +26,9 @@ body {
   
   border-bottom: 6px solid #B28756;
 }
+.menu li a {
+  border-bottom: 6px solid rgb(51, 53, 54)
+}
 .menu li a:hover {
   color: #B28756;
   border-bottom: 6px solid #B28756;

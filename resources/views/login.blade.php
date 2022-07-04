@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>@yield('title')Login</title>
+    <title>@yield('title')Login - AW</title>
     <link rel="stylesheet" href="{{ asset('site/style.css') }}" />
     <link rel="stylesheet" href="{{ asset('assets/css/login.css') }}" />
 </head>
