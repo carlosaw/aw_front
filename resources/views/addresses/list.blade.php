@@ -3,6 +3,7 @@
 @section('title', 'Lista de Endereços')
 
 @section('content')
+  
   <h1>Lista de Endereços</h1>
   
   @if(session('success'))
@@ -18,11 +19,11 @@
       {{session('warning')}}
     </div>
   @endif
-
-  <a href="{{ route('addresses.add') }}">
-    <button class="btn btn-sm btn-primary">Adicionar</button>
-  </a>
   
+  <a href="{{ route('addresses.add') }}">
+    <button class="btnadd btn-sm btn-primary">Adicionar</button>
+  </a>
+  <div class="content">
   <table class="table table-striped table-hover">
     <thead class="thead-dark">
       <tr>
@@ -57,7 +58,7 @@
         </tr>        
       @endforeach     
     </table>  
-    
+  </div>    
   @else
     Não há endereços a serem listados!
   @endif

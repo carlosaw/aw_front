@@ -38,10 +38,11 @@
     </header>
     
     <div class="content">
+      
         <div class="title m-b-md">
-            <a><img class="logo" src="assets/images/logo4.png" /></a>
-            
+            <a><img class="logo" src="assets/images/logo4.png" /></a>           
         </div>
+
         <div class="icons">
           <a href="https://www.facebook.com/awregulagens"><img class="face" src="assets/images/face.png" title="Facebook"/></a>
           <a href="https://www.youtube.com/watch?v=Wn4wB17SECk"><img class="youtube" src="assets/images/youtube.png" title="Youtube" /></a>

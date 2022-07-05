@@ -31,7 +31,22 @@ body {
 .container {
   max-width: 1140px;
   margin: auto;
+  height: calc(100vh - 260px);
+}
+.content {
+  background-color: #0095ff;
+  height: 100vh;
+}
+.content2 {
+  background-image: url('../images/motor.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
   height: calc(100vh - 160px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 header {
@@ -91,12 +106,53 @@ header {
   border-bottom: 6px solid #B28756;
 }
 
+.contentHome {
+  background-image: url('../../assets/images/motor.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: calc(100vh - 160px);
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+}
+.card2 { 
+  width: max-content;
+  position: relative;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 0.25rem;
+}
+
 footer {
   background-color: rgb(51, 53, 54);
   text-align: center;
   line-height: 80px;
   color: #c2c3c7;
 }
+.row2 {
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+}
+.btnadd {
+  width: 100px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -483,6 +539,7 @@ h6,
 h1,
 .h1 {
   font-size: 2.5rem;
+  color: #999;
 }
 
 h2,
@@ -1870,7 +1927,8 @@ pre code {
 .table {
   width: 100%;
   margin-bottom: 1rem;
-  color: #212529;
+  color: #6a6e71;
+  background-color: floralwhite;
 }
 
 .table th,
