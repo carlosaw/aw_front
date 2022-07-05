@@ -4,11 +4,11 @@
     <title>@yield('title') - AW</title>
     <link rel="stylesheet" href="{{ asset('site/style.css') }}" />
     <link rel="stylesheet" href="{{ asset('assets/css/login.css') }}" />
+    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}" />
 </head>
 <body>
 
-<div class="container">
-  
+<div class="container">  
     <header>
       <div class="header">
         <a class="logo1" href="https://awregulagens.com.br" title="Visite o site">
@@ -33,13 +33,11 @@
     <section>
         @yield('content')
     </section>
-    <section>
-      <footer>
-        Copyriht@Todos os direitos reservados!
-      </footer>
-    </section>
     
-    
+    <footer>
+      Copyriht@Todos os direitos reservados!
+    </footer>
+       
 </div>
     <script src="{{ asset('site/jquery.js') }}"></script>
     <script src="{{ asset('site/bootstrap.js') }}"></script>

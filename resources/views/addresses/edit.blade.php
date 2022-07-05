@@ -4,7 +4,7 @@
 
 @section('content')
   <h1>Edição de Endereço</h1>
-    
+  <div class="add2">  
     <form method="POST">
       @csrf
       <div class="form-group">
@@ -39,5 +39,10 @@
       <input class="btn btn-sm btn-primary" type="submit" value="Salvar" />
     </form>
     <hr/>
-  
+  </div>
 @endsection
+
+
+
+
+

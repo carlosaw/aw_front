@@ -29,13 +29,10 @@ body {
   font-weight: 600;
 }
 .container {
-  max-width: 1140px;
+  max-width: 1240px;
   margin: auto;
-  height: calc(100vh - 260px);
-}
-.content {
-  background-color: #0095ff;
-  height: 100vh;
+  height: calc(100vh - 270px);
+  background-color: floralwhite;
 }
 .content2 {
   background-image: url('../images/motor.jpg');
@@ -138,6 +135,9 @@ footer {
 }
 .btnadd {
   width: 100px;
+}
+.address {
+  height: calc(100vh - 160px);
 }
 
 
