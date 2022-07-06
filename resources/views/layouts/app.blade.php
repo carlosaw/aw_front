@@ -18,10 +18,10 @@
         <div class="menu">          
           <nav>            
             <ul>            
-                <li><a href="{{ route('clients.list') }}">Clientes</a></li>                    
-                <li><a href="{{ route('addresses.list') }}">Endereços</a></li>
-                <li><a href="{{ route('vehicles.list') }}">Veículos</a></li>
-                <li><a href="{{ route('products.list') }}">Produtos</a></li> 
+                <li class="{{ request()->RouteIs('clients.list') ? 'active' : '' }}"><a href="{{ route('clients.list') }}">Clientes</a></li>                    
+                <li class="{{ request()->RouteIs('addresses.list') ? 'active' : '' }}"><a href="{{ route('addresses.list') }}">Endereços</a></li>
+                <li class="{{ request()->RouteIs('vehicles.list') ? 'active' : '' }}"><a href="{{ route('vehicles.list') }}">Veículos</a></li>
+                <li class="{{ request()->RouteIs('products.list') ? 'active' : '' }}"><a href="{{ route('products.list') }}">Produtos</a></li> 
                 <li><a href="/logout" style="float: right">Sair</a></li> 
             </ul>
           </nav>

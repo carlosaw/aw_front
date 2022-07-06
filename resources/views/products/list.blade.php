@@ -20,7 +20,7 @@
   @endif
 
   <a href="{{ route('products.add') }}">
-    <button class="btn btn-sm btn-primary">Adicionar</button>
+    <button class="btnadd btn-sm btn-primary">Adicionar</button>
   </a>
 
   <table class="table table-striped table-hover">

@@ -20,7 +20,13 @@ body {
 .container {
   background-color: #EEE;
   height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 h1 {
   color: rgb(49, 48, 48);
+}
+footer {
+  background-color: rgb(51, 53, 54);
+  margin-block-start: auto;
 }
