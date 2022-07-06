@@ -5,7 +5,7 @@
 @section('content')
     <div class="add">
     
-        <h1>Lista de Endereços</h1>
+        <h1 class="lists">Lista de Endereços</h1>
   
         @if(session('success'))
         <div class="alert alert-success" id="success">

@@ -3,7 +3,7 @@
 @section('title', 'Edição de Produto')
 
 @section('content')
-  <h1>Edição de Produto</h1>
+  <h1 class="edits">Edição de Produto</h1>
   
   <form method="POST">
     @csrf

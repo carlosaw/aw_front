@@ -56,7 +56,7 @@ class AddressesController extends Controller
     // EDIT
     public function edit($id) {
         $data = Address::find($id);
-
+        
         if($data) {// Se tiver manda pra edit
             return view('addresses.edit', [
                 'data' => $data// Manda o primeiro item

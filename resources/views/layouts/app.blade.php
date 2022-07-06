@@ -18,10 +18,15 @@
         <div class="menu">          
           <nav>            
             <ul>            
-                <li class="{{ request()->RouteIs('clients.list') ? 'active' : '' }}"><a href="{{ route('clients.list') }}">Clientes</a></li>                    
-                <li class="{{ request()->RouteIs('addresses.list') ? 'active' : '' }}"><a href="{{ route('addresses.list') }}">Endereços</a></li>
-                <li class="{{ request()->RouteIs('vehicles.list') ? 'active' : '' }}"><a href="{{ route('vehicles.list') }}">Veículos</a></li>
-                <li class="{{ request()->RouteIs('products.list') ? 'active' : '' }}"><a href="{{ route('products.list') }}">Produtos</a></li> 
+                
+                <li class="{{ request()->RouteIs('clients.list') ? 'active' : '' }} {{ request()->is('clients/edit') ? 'active' : '' }} {{ request()->is('clients/edit/*') ? 'active' : '' }}"><a href="{{asset('clients')}}">Clientes</a> </li>
+
+                <li class="{{ request()->RouteIs('addresses.list') ? 'active' : '' }} {{ request()->is('addresses/edit') ? 'active' : '' }} {{ request()->is('addresses/edit/*') ? 'active' : '' }}"><a href="{{asset('addresses')}}">Endereços</a> </li>
+
+                <li class="{{ request()->RouteIs('vehicles.list') ? 'active' : '' }} {{ request()->is('vehicles/edit') ? 'active' : '' }} {{ request()->is('vehicles/edit/*') ? 'active' : '' }}"><a href="{{asset('vehicles')}}">Veículos</a> </li>
+
+                <li class="{{ request()->RouteIs('products.list') ? 'active' : '' }} {{ request()->is('products/edit') ? 'active' : '' }} {{ request()->is('products/edit/*') ? 'active' : '' }}"><a href="{{asset('products')}}">Produtos</a> </li>
+
                 <li><a href="/logout" style="float: right">Sair</a></li> 
             </ul>
           </nav>

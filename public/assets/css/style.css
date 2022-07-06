@@ -3,9 +3,11 @@ body {
 }
 .add {
   height: calc(100vh - 160px);
+  padding-top: 13px;
 }
 .add2 {
-  height: calc(100vh - 216px);
+  height: calc(100vh - 216px); 
+  padding-top: 13px;
 }
 .edit2 {
   height: calc(100vh - 216px);
@@ -23,8 +25,16 @@ body {
   display: flex;
   flex-direction: column;
 }
+.lists {
+  margin-bottom: -41px;
+}
+section h1.edits {
+  margin-bottom: -13px;
+  margin-top: 20px;
+}
+
 h1 {
-  color: rgb(49, 48, 48);
+  color: rgb(49, 48, 48); 
 }
 footer {
   background-color: rgb(51, 53, 54);

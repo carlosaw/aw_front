@@ -3,7 +3,8 @@
 @section('title', 'Lista de Veículos')
 
 @section('content')
-  <h1>Lista de Veículos</h1>
+<div class="add">
+  <h1 class="lists">Lista de Veículos</h1>
 
   @if(session('success'))
     <div class="alert alert-success" id="success">
@@ -60,4 +61,5 @@
   @else
     <h3 style="color: red">Não há Veículos a serem listados!</h3>
   @endif
+</div>
 @endsection

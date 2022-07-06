@@ -36,7 +36,7 @@ Route::prefix('/addresses')->group(function(){
     Route::post('add', 'AddressesController@addAction'); // Ação de adição CLIENTE
 
     Route::get('edit/{id}', 'AddressesController@edit')->name('addresses.edit'); // Tela de edição
-    Route::post('edit/{id}', 'AddressesController@editAction'); // Ação de edição
+    Route::post('edit/{id}', 'AddressesController@editAction')->name('addresses.edit.id'); // Ação de edição
 
     Route::get('delete/{id}', 'AddressesController@del')->name('addresses.del'); // Ação de Deletar
 });
@@ -48,7 +48,7 @@ Route::prefix('/clients')->group(function(){
     Route::post('add', 'ClientsController@addAction'); // Ação de adição CLIENTE
 
     Route::get('edit/{id}', 'ClientsController@edit')->name('clients.edit'); // Tela de edição
-    Route::post('edit/{id}', 'ClientsController@editAction'); // Ação de edição
+    Route::post('edit/{id}', 'ClientsController@editAction')->name('clients.edit.id'); // Ação de edição
 
     Route::get('delete/{id}', 'ClientsController@del')->name('clients.del'); // Ação de Deletar
 });
