@@ -46,7 +46,7 @@ class ProductsController extends Controller
         } else {
             return redirect()
             ->route('products.add')
-            ->with('warning', '⚡ Preencha todos os campos2!');
+            ->with('warning', '⚡ Preencha todos os campos!');
         }
     }
 

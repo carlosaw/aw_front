@@ -23,7 +23,7 @@
   <div class="container">
     <header>
       <div class="header">
-        <a class="logo1" href="https://awregulagens.com.br" title="Visite o site">
+        <a class="logo1" href="{{route('welcome')}}">
           <img src="{{ asset('assets/images/logo4.png') }}" width="150" alt="0" />
         </a>
         <div class="menu">          

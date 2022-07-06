@@ -3,7 +3,7 @@
 @section('title', 'Adição de Cliente')
 
 @section('content')
-  <h1>Adição de Cliente</h1>
+  <h1 class="edits">Adição de Cliente</h1>
   @if(session('success'))
     <div class="alert alert-success" id="success">
       {{session('success')}}

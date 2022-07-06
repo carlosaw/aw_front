@@ -11,13 +11,14 @@
 <div class="container">  
     <header>
       <div class="header">
-        <a class="logo1" href="https://awregulagens.com.br" title="Visite o site">
-          <img src="{{ asset('assets/images/logo4.png') }}" width="150" alt="0" />
+        <a class="logo1" href="{{route('welcome')}}">
+          <img  src="{{ asset('assets/images/logo4.png') }}" width="150" alt="0"/>
         </a>
               
         <div class="menu">          
           <nav>            
-            <ul>            
+            <ul>
+              <li class="{{ request()->RouteIs('home') ? 'active' : '' }} {{ request()->is('home') ? 'active' : '' }} {{ request()->is('home') ? 'active' : '' }}"><a href="{{asset('home')}}">Início</a> </li>            
                 
                 <li class="{{ request()->RouteIs('clients.list') ? 'active' : '' }} {{ request()->is('clients/edit') ? 'active' : '' }} {{ request()->is('clients/edit/*') ? 'active' : '' }}"><a href="{{asset('clients')}}">Clientes</a> </li>
 

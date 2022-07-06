@@ -3,7 +3,7 @@
 @section('title', 'Adição de Produto')
 
 @section('content')
-  <h1>Adição de Produto</h1>
+  <h1 class="edits">Adição de Produto</h1>
 
   @if(session('success'))
     <div class="alert alert-success" id="success">
