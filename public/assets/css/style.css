@@ -33,9 +33,36 @@ section h1.edits {
   margin-top: 20px;
 }
 
-h1 {
-  color: rgb(49, 48, 48); 
+h1,
+.titleAdd h1 {
+  color: rgb(49, 48, 48);
 }
+.titleAdd {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.addForm {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.formAdd {
+  width: 50%;
+  border: 1px solid rgb(185, 184, 184);
+  padding: 20px;
+  border-radius: 5px;
+  background-color: rgb(242, 242, 243);
+}
+
+
+
+
+
+
+
+
+
 footer {
   background-color: rgb(51, 53, 54);
   margin-block-start: auto;

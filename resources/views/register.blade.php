@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+<h1>Área Restrita!</h1>
+{{-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <title>@yield('title')Cadastro</title>
@@ -70,4 +71,4 @@
     <script src="{{ asset('site/bootstrap.js') }}"></script>
     <script type="text/javascript" src="{{ asset('site/js/script.js') }}"></script>    
 </body>
-</html>
+</html> --}}

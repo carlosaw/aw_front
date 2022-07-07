@@ -3,7 +3,11 @@
 @section('title', 'Adição de Veículo')
 
 @section('content')
-  <h1 class="edits">Adição de Veículo</h1>
+<div class="addForm">
+  <div class="formAdd">
+    <div class="titleAdd">
+      <h1>Adição de Veículo</h1>
+    </div>
 
   @if(session('success'))
     <div class="alert alert-success" id="success">
@@ -18,35 +22,31 @@
   <form method="POST">
     @csrf
     <div class="form-group">
-      <label for="plate">Placa</label>
-        <input type="text" class="form-control" id="plate" name="plate" autofocus="autofocus">
+      <input type="text" class="form-control" id="plate" name="plate" autofocus="autofocus"
+      placeholder="Placa">
     </div>
     <div class="form-group">
-      <label for="brand">Marca</label>
-        <input type="text" class="form-control" id="brand" name="brand">
-    </div>
-
-    <div class="form-group">
-      <label for="model">Modelo</label>
-        <input type="text" class="form-control" id="model" name="model">
+      <input type="text" class="form-control" id="brand" name="brand" placeholder="Marca">
     </div>
 
     <div class="form-group">
-      <label for="color">Cor</label>
-        <input type="text" class="form-control" id="color" name="color">
+      <input type="text" class="form-control" id="model" name="model" placeholder="Modelo">
     </div>
 
     <div class="form-group">
-      <label for="year">Ano</label>
-        <input type="text" class="form-control" id="year" name="year">
+      <input type="text" class="form-control" id="color" name="color" placeholder="Côr">
     </div>
 
     <div class="form-group">
-      <label for="km">Quilometragem</label>
-        <input type="text" class="form-control" id="km" name="km">
+      <input type="text" class="form-control" id="year" name="year" placeholder="Ano">
+    </div>
+
+    <div class="form-group">
+      <input type="text" class="form-control" id="km" name="km" placeholder="KM">
     </div>
 
     <input class="btn btn-sm btn-primary" type="submit" value="Adicionar" />
   </form>
-  <hr/>
+  </div>
+</div>
 @endsection
