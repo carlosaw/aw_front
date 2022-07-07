@@ -57,8 +57,12 @@
                             </a>
                         </td>
                     </tr>        
-                @endforeach     
-            </table>  
+                @endforeach 
+                    
+            </table>
+            <div class="pagination">
+                {{$list->links()}} 
+            </div>
         </div>    
                 @else
                     Não há endereços a serem listados!

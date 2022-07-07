@@ -13,7 +13,8 @@ class AddressesController extends Controller
     
     // INDEX
     public function list() {
-        $list = Address::all();
+        $list = Address::paginate(16);
+        //dd($list);
         return view('addresses.list', [
             'list' => $list
         ]);

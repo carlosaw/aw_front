@@ -4,19 +4,9 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <title>Laravel</title>
-
-    <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('assets/css/welcome.css') }}" />
-
-
-    <!-- Styles -->
-    <style>
-
-
-    </style>
 </head>
 
 <body>
@@ -52,6 +42,7 @@
     <footer>
         Copyriht@Todos os direitos reservados!
     </footer>
+
   </div>
     <script src="{{ asset('site/jquery.js') }}"></script>
     <script src="{{ asset('site/bootstrap.js') }}"></script>
