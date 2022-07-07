@@ -3,7 +3,11 @@
 @section('title', 'Edição de Cliente')
 
 @section('content')
-  <h1 class="edits">Edição de Cliente</h1>
+<div class="addForm">
+  <div class="formAdd">
+    <div class="titleAdd">
+      <h1>Edição de Cliente</h1>
+    </div><br/>
 
   <form method="POST">
     @csrf
@@ -32,6 +36,7 @@
 
     <input class="btn btn-sm btn-primary" type="submit" value="Salvar" />
   </form>
-  <hr/>
+  </div>
+</div>
 
 @endsection

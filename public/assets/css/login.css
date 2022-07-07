@@ -7,16 +7,16 @@
 body {
   font-family: 'Nunito', sans-serif;
   font-weight: 600;
-  background-color: rgb(51, 53, 54);
+  background-color: rgb(51 53 54);
 }
 .container {
   max-width: 1240px;
   margin: auto;
-  background-color: rgb(51, 53, 54);
+  background-color: rgb(51 53 54);
 }
 
 .header {
-  background-color: rgb(53 48 48);
+  background-color: rgb(51 53 54);
 }
 .logo1 img {
   margin-top: 11px;

@@ -3,7 +3,11 @@
 @section('title', 'Edição de Veículo')
 
 @section('content')
-  <h1 class="edits">Edição de Veículo</h1>
+<div class="veiForm">
+  <div class="formVei">
+    <div class="titleVei">
+      <h1>Edição de Veículo</h1>
+    </div><br/>
   
   <form method="POST">
     @csrf
@@ -44,6 +48,7 @@
 
     <input class="btn btn-sm btn-primary" type="submit" value="Salvar" />
   </form>
-  <hr/>
+  </div>
+</div>
 
 @endsection
