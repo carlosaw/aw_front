@@ -60,6 +60,7 @@
                 @endforeach 
                     
             </table>
+            
             <div class="pagination">
                 {{$list->links()}} 
             </div>

@@ -4,6 +4,7 @@ body {
 .add {
   height: calc(100vh - 160px);
   padding-top: 13px;
+  overflow: auto;
 }
 .add2 {
   height: calc(100vh - 216px); 
@@ -22,8 +23,6 @@ body {
 .container {
   background-color: #EEE;
   height: 100vh;
-  display: flex;
-  flex-direction: column;
 }
 .lists {
   margin-bottom: -41px;
@@ -44,17 +43,24 @@ h1,
 .addForm {
   display: flex;
   justify-content: center;
-  margin-top: 50px;
+  height: calc(100vh - 160px);
+  overflow: auto;
 }
 
 .formAdd {
   width: 50%;
-  border: 1px solid rgb(185, 184, 184);
   padding: 20px;
-  border-radius: 5px;
-  background-color: rgb(242, 242, 243);
 }
-
+.veiForm {
+  display: flex;
+  justify-content: center;
+  height: calc(100vh - 160px);
+  overflow: auto;
+}
+.formVei {
+  width: 50%;
+  padding: 20px;
+}
 
 
 
