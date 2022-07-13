@@ -13,7 +13,7 @@ class ClientsController extends Controller
     
     //
     public function list() {
-        $list = Client::all();
+        $list = Client::paginate(16);
         return view('clients.list', [
             'list' => $list
         ]);

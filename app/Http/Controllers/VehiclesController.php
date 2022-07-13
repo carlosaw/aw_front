@@ -13,7 +13,7 @@ class VehiclesController extends Controller
     
     //
     public function list() {
-        $list = Vehicle::all();
+        $list = Vehicle::paginate(16);
         return view('vehicles.list', [
             'list' => $list
         ]);

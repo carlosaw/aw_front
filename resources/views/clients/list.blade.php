@@ -54,8 +54,12 @@
                   </td>
                 </tr>        
               @endforeach     
-            </table>  
-            
+            </table> 
+
+            <div class="pagination">
+              {{$list->links()}} 
+            </div> 
+             
           @else
             Não há clientes a serem listados!
           @endif

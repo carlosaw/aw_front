@@ -56,7 +56,11 @@
           </td>
         </tr>        
       @endforeach     
-    </table>  
+    </table>
+
+    <div class="pagination">
+      {{$list->links()}} 
+    </div>
     
   @else
     <h3 style="color: red">Não há Veículos a serem listados!</h3>

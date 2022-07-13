@@ -13,7 +13,7 @@ class ProductsController extends Controller
     
     //
     public function list() {
-        $list = Product::all();
+        $list = Product::paginate(16);
         return view('products.list', [
             'list' => $list
         ]);

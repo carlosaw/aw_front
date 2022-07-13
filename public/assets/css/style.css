@@ -10,11 +10,19 @@ body {
   height: calc(100vh - 216px); 
   padding-top: 13px;
 }
+.search input {
+  margin-left: 15px;
+  width: 250px;
+  height: 32px;
+  outline: none;
+  padding-left: 10px;
+  border: 1px solid #B28756;
+  border-radius: 3px;
+}
 .edit2 {
   height: calc(100vh - 216px);
 }
 .content {
-  height: calc(100vh - 190px);
   background-color: #EEE;
 }
 .alertadd {

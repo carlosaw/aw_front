@@ -20,11 +20,21 @@
             {{session('warning')}}
         </div>
         @endif
-    
-        <a href="{{ route('addresses.add') }}">
-        <button class="btnadd btn-sm btn-primary">Adicionar</button>
-        </a>
-  
+        <div class="search">            
+            <div class="form-outline">
+                <a href="{{ route('addresses.add') }}">
+                    <button class="btnadd btn-sm btn-primary">Adicionar</button>
+                    </a>
+              <input type="search" id="form1" name="search" autofocus />              
+            </div>            
+          </div>    
+        {{-- <div class="search">
+            <a href="{{ route('addresses.add') }}">
+                <button class="btnadd btn-sm btn-primary">Adicionar</button>
+                </a>
+            <input type="text" id="search" name="search" /> 
+        </div> --}}
+
         <div class="content">
             <table class="table table-striped table-hover">
                 <thead class="thead-dark">
