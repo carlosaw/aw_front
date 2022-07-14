@@ -20,20 +20,16 @@
             {{session('warning')}}
         </div>
         @endif
-        <div class="search">            
-            <div class="form-outline">
-                <a href="{{ route('addresses.add') }}">
-                    <button class="btnadd btn-sm btn-primary">Adicionar</button>
-                    </a>
-              <input type="search" id="form1" name="search" autofocus />              
-            </div>            
-          </div>    
-        {{-- <div class="search">
-            <a href="{{ route('addresses.add') }}">
-                <button class="btnadd btn-sm btn-primary">Adicionar</button>
-                </a>
-            <input type="text" id="search" name="search" /> 
-        </div> --}}
+
+        <div class="search">                       
+          <a href="{{ route('addresses.add') }}">
+              <button class="btnadd btn-sm btn-primary">Adicionar</button>
+          </a>                
+          <form action="{{ route('addresses.list') }}" method="GET">                 
+              <input type="text" id="search" name="search" autofocus placeholder="Procurar"class="btn-text-top" />
+              <div><button class="btn-buscar-top" type="submit"></button></div>
+          </form>                                                     
+        </div>    
 
         <div class="content">
             <table class="table table-striped table-hover">
@@ -70,10 +66,13 @@
                 @endforeach 
                     
             </table>
-            
-            <div class="pagination">
-                {{$list->links()}} 
-            </div>
+
+            @if($search == '')
+                <div class="pagination">
+                    {{$list->links()}} 
+                </div>
+            @endif
+
         </div>    
                 @else
                     Não há endereços a serem listados!

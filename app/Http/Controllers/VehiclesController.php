@@ -13,9 +13,19 @@ class VehiclesController extends Controller
     
     //
     public function list() {
-        $list = Vehicle::paginate(16);
+        $search = request('search');
+        if($search) {
+            $list = Vehicle::where([
+                ['plate', 'like', '%'.$search.'%']
+            ])->get();           
+        } else {
+            $list = Vehicle::paginate(16);
+        }
+        
+        //dd($list);
         return view('vehicles.list', [
-            'list' => $list
+            'list' => $list,
+            'search' => $search
         ]);
     }
 

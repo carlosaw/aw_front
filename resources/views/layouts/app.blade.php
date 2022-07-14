@@ -46,7 +46,7 @@
        
 </div>
     <script src="{{ asset('site/jquery.js') }}"></script>
-    <script src="{{ asset('site/bootstrap.js') }}"></script>
+    <script src="{{ asset('site/js/jQuery-Mask/dist/jquery.mask.js') }}"></script>
 
     <script type="text/javascript" src="{{ asset('site/js/script.js') }}"></script>
     

@@ -13,9 +13,19 @@ class ProductsController extends Controller
     
     //
     public function list() {
-        $list = Product::paginate(16);
+        $search = request('search');
+        if($search) {
+            $list = Product::where([
+                ['name', 'like', '%'.$search.'%']
+            ])->get();           
+        } else {
+            $list = Product::paginate(16);
+        }
+        
+        //dd($list);
         return view('products.list', [
-            'list' => $list
+            'list' => $list,
+            'search' => $search
         ]);
     }
     public function add() {

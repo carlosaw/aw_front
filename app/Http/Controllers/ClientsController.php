@@ -13,9 +13,19 @@ class ClientsController extends Controller
     
     //
     public function list() {
-        $list = Client::paginate(16);
+        $search = request('search');
+        if($search) {
+            $list = Client::where([
+                ['cpf', 'like', '%'.$search.'%']
+            ])->get();           
+        } else {
+            $list = Client::paginate(16);
+        }
+        
+        //dd($list);
         return view('clients.list', [
-            'list' => $list
+            'list' => $list,
+            'search' => $search
         ]);
     }
 

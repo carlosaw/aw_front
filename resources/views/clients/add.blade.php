@@ -24,12 +24,13 @@
         <input type="text" class="form-control" id="name" name="name" autofocus="autofocus"
         placeholder="Nome Completo">
       </div>
-      <div class="form-group">
-        <input type="text" class="form-control" id="cpf" name="cpf" placeholder="cpf/cnpj">
+
+      <div class="form-group">            
+        <input type="text" class="form-control" id="cpf" name="cpf" placeholder="cpf/cnpj">        
       </div>
 
       <div class="form-group">
-        <input type="text" class="form-control" id="fone" name="fone" placeholder="Fone/Celular">
+        <input type="text" class="form-control" id="phone" name="fone" placeholder="Fone/Celular">
       </div>
 
       <div class="form-group">

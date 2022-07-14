@@ -20,9 +20,15 @@
     </div>
   @endif
   
-  <a href="{{ route('vehicles.add') }}">
-    <button class="btnadd btn-sm btn-primary">Adicionar</button>
-  </a>
+  <div class="search">                       
+    <a href="{{ route('vehicles.add') }}">
+      <button class="btnadd btn-sm btn-primary">Adicionar</button>
+    </a>                
+    <form action="{{ route('vehicles.list') }}" method="GET">                 
+      <input type="text" id="search" name="search" autofocus placeholder="Procurar por Placa" class="btn-text-top" />
+      <div><button class="btn-buscar-top" type="submit"></button></div>
+    </form>                                                 
+  </div>
 
   <table class="table table-striped table-hover">
     <thead class="thead-dark">
@@ -58,9 +64,11 @@
       @endforeach     
     </table>
 
-    <div class="pagination">
-      {{$list->links()}} 
-    </div>
+    @if($search == '')
+      <div class="pagination">
+          {{$list->links()}} 
+      </div>
+    @endif
     
   @else
     <h3 style="color: red">Não há Veículos a serem listados!</h3>

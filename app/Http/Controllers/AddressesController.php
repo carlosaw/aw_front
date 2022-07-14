@@ -13,11 +13,22 @@ class AddressesController extends Controller
     
     // INDEX
     public function list() {
-        $list = Address::paginate(16);
+        
+        $search = request('search');
+        if($search) {
+            $list = Address::where([
+                ['street_num', 'like', '%'.$search.'%']
+            ])->get();
+        } else {
+            $list = Address::paginate(16);
+        }
+        
         //dd($list);
         return view('addresses.list', [
-            'list' => $list
+            'list' => $list,
+            'search' => $search
         ]);
+                
     }
 
     // CREATE

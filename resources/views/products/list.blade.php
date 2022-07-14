@@ -20,9 +20,15 @@
     </div>
   @endif
 
-  <a href="{{ route('products.add') }}">
-    <button class="btnadd btn-sm btn-primary">Adicionar</button>
-  </a>
+  <div class="search">                       
+    <a href="{{ route('products.add') }}">
+      <button class="btnadd btn-sm btn-primary">Adicionar</button>
+    </a>                
+    <form action="{{ route('products.list') }}" method="GET">                 
+      <input type="text" id="search" name="search" autofocus placeholder="Procurar" class="btn-text-top" />
+      <div><button class="btn-buscar-top" type="submit"></button></div>
+    </form>                                                 
+  </div>
 
   <table class="table table-striped table-hover">
     <thead class="thead-dark">
@@ -56,9 +62,11 @@
       @endforeach     
     </table>
 
-    <div class="pagination">
-      {{$list->links()}} 
-    </div>
+    @if($search == '')
+      <div class="pagination">
+          {{$list->links()}} 
+      </div>
+    @endif
     
   @else
     Não há Produtos a serem listados!

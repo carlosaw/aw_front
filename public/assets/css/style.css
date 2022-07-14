@@ -3,7 +3,7 @@ body {
 }
 .add {
   height: calc(100vh - 160px);
-  padding-top: 13px;
+  padding-top: 20px;
   overflow: auto;
 }
 .add2 {
@@ -16,7 +16,7 @@ body {
   height: 32px;
   outline: none;
   padding-left: 10px;
-  border: 1px solid #B28756;
+  border: 1px solid #8795a2;
   border-radius: 3px;
 }
 .edit2 {
@@ -69,7 +69,33 @@ h1,
   width: 50%;
   padding: 20px;
 }
-
+.search {
+  display: flex;
+}
+    
+.btn-text-top {
+  background-color: #f5f6fa;
+  border: 1px solid rgba(255, 255, 255, .1);
+  padding: 15px 50px 15px 30px;
+  border-radius: 20px;
+  width: 100%!important;
+  height: 42px;
+  font-weight: 300;
+  color: #8795a2;
+}
+    
+.btn-buscar-top {
+  width: 20px!important;
+  height: 22px;
+  background: url(http://www.devmedia.com.br/imagens/2013/buscar_grey.png) no-repeat;
+  cursor: pointer!important;
+  border: none;
+  transform: translateY(-50%);
+  padding: 0;
+  position: relative;
+  top: -15px;
+  left: 260px;
+}
 
 
 
