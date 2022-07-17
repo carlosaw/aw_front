@@ -29,3 +29,7 @@ var CpfCnpjMaskBehavior = function (val) {
 	$('#cpf').mask(CpfCnpjMaskBehavior, cpfCnpjpOptions);
 	/* === END MASK FIELDS === */
 	// https://igorescobar.github.io/jQuery-Mask-Plugin/docs.html
+
+	$('#cep').mask('00000-000');
+	// $('#value_unit').mask('000.000.000.000.000,00', {reverse: false});
+	// $('#total').mask('000.000.000.000.000,00', {reverse: false});
