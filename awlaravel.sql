@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 27-Jun-2022 às 21:55
+-- Tempo de geração: 18-Jul-2022 às 19:30
 -- Versão do servidor: 10.4.22-MariaDB
 -- versão do PHP: 7.4.26
 
@@ -41,9 +41,38 @@ CREATE TABLE `addresses` (
 --
 
 INSERT INTO `addresses` (`id`, `street_num`, `cep`, `district`, `city`, `state`) VALUES
-(16, 'Rua A, 43', '78125-950', 'Centro', 'City', 'PSo'),
-(25, 'Validator', '781254-650', 'Centro', 'daasd', 'mt'),
-(30, 'Rua Jatobá 2', '45652-655', 'Centro 2', 'Mata Grande2', 'RR');
+(1, 'Rua Anjos, 34', '25650-520', 'Jd. Maravilhas', 'Várzea', 'MonTe'),
+(2, 'Travessa Arquimedes, 1234', '78125-650', 'Centro', 'Cuiabá', 'MT'),
+(3, 'Rua Mem de Sá, 61', '78125-950', 'Centro', 'Vanilla', 'MS'),
+(4, 'Rua Mem de Sá, 61', '78125-950', 'Centro', 'Vanilla', 'MS'),
+(5, 'Rua Mem de Sá, 61', '78125-950', 'Centro', 'Vanilla', 'MS'),
+(6, 'Rua Mem de Sá, 61', '78125-950', 'Centro', 'Vanilla', 'MS'),
+(7, 'Rua Mem de Sá, 61', '78125-950', 'Centro', 'Vanilla', 'MS'),
+(8, 'Rua Mem de Sá, 61', '78125-950', 'Centro', 'Vanilla', 'MS'),
+(9, 'Rua Mem de Sá, 61', '78125-950', 'Centro', 'Vanilla', 'MS'),
+(10, 'Rua Mem de Sá, 61', '78125-950', 'Centro', 'Vanilla', 'MS'),
+(11, 'Rua Mem de Sá, 61', '78125-950', 'Centro', 'Vanilla', 'MS'),
+(12, 'Rua Mem de Sá, 61', '78125-950', 'Centro', 'Vanilla', 'MS'),
+(13, 'Rua Mem de Sá, 61', '78125-950', 'Centro', 'Vanilla', 'MS'),
+(14, 'Rua Mem de Sá, 61', '78125-950', 'Centro', 'Vanilla', 'MS'),
+(15, 'Rua Mem de Sá, 61', '78125-950', 'Centro', 'Vanilla', 'MS'),
+(16, 'Rua Mem de Sá, 61', '78125-950', 'Centro', 'Vanilla', 'MS'),
+(17, 'Rua Mem de Sá, 61', '78125-950', 'Centro', 'Vanilla', 'MS'),
+(18, 'Rua Mem de Sá, 61', '78125-950', 'Centro', 'Vanilla', 'MS'),
+(19, 'Rua Mem de Sá, 61', '78125-950', 'Centro', 'Vanilla', 'MS'),
+(20, 'Rua Mem de Sá, 61', '78125-950', 'Centro', 'Vanilla', 'MS'),
+(21, 'Rua Mem de Sá, 61', '78125-950', 'Centro', 'Vanilla', 'MS'),
+(22, 'Rua Mem de Sá, 61', '78125-950', 'Centro', 'Vanilla', 'MS'),
+(23, 'Rua Mem de Sá, 61', '78125-950', 'Centro', 'Vanilla', 'MS'),
+(24, 'Rua Mem de Sá, 61', '78125-950', 'Centro', 'Vanilla', 'MS'),
+(25, 'Rua Mem de Sá, 61', '78125-950', 'Centro', 'Vanilla', 'MS'),
+(26, 'Rua Mem de Sá, 61', '78125-950', 'Centro', 'Vanilla', 'MS'),
+(27, 'Rua Mem de Sá, 61', '78125-950', 'Centro', 'Vanilla', 'MS'),
+(28, 'Rua Mem de Sá, 61', '78125-950', 'Centro', 'Vanilla', 'MS'),
+(29, 'Rua Mem de Sá, 61', '78125-950', 'Centro', 'Vanilla', 'MS'),
+(30, 'Rua Mem de Sá, 61', '78125-950', 'Centro', 'Vanilla', 'MS'),
+(31, 'Rua Mem de Sá, 61', '78125-950', 'Centro', 'Vanilla', 'MS'),
+(32, 'Rua Sorte, 33', '78125.650', 'Centro', 'Xavante', 'PA');
 
 -- --------------------------------------------------------
 
@@ -65,11 +94,32 @@ CREATE TABLE `clients` (
 --
 
 INSERT INTO `clients` (`id`, `name`, `cpf`, `fone`, `email`, `address_id`) VALUES
-(1, 'Mara Editada', '111.222.333-44', '(65) 9 9981-4563', 'mara2@gmail.com', NULL),
-(7, 'Lourival de Marques', '222.333.666-66', '(65) 9 9982-3569', 'lori@gmail.com', NULL),
-(11, 'Josefina Anaconda', '222.333.444-55', '(65)9 9981-3879', 'josefina@gmail.com', NULL),
-(14, 'Anaconda', '456.689.789-88', '(65)9 9981-3879', 'Ana@gmail.com', NULL),
-(18, 'Anaconda 2', '456.689.789-58', '(65)9 9981-3879', 'Ana2@gmail.com', NULL);
+(1, 'Chaplin', '000.000.000-99', '(41) 3682-5291', 'chap@gmail.com', 1),
+(2, 'Carolina de Abreu', '222.333.666.88', '(65)9 9981-3879', 'carol@gmail.com', NULL),
+(3, 'Fulano', '111.111.111-11', '(65)999888-8875', 'fulano@gmail.com', NULL),
+(7, 'Fulano', '111.111.111-12', '(65)999888-8875', 'fulano2@gmail.com', NULL),
+(8, 'Fulano', '111.111.111-13', '(65)999888-8875', 'fulano3@gmail.com', NULL),
+(9, 'Fulano', '111.111.111-14', '(65)999888-8875', 'fulano4@gmail.com', NULL),
+(10, 'Fulano', '111.111.111-15', '(65)999888-8875', 'fulano5@gmail.com', NULL),
+(11, 'Fulano', '111.111.111-16', '(65)999888-8875', 'fulano6@gmail.com', NULL),
+(12, 'Fulano', '111.111.111-17', '(65)999888-8875', 'fulano7@gmail.com', NULL),
+(13, 'Fulano', '111.111.111-18', '(65)999888-8875', 'fulano8@gmail.com', NULL),
+(14, 'Fulano', '111.111.111-19', '(65)999888-8875', 'fulano9@gmail.com', NULL),
+(15, 'Fulano', '111.111.111-25', '(65)999888-8875', 'fulano25@gmail.com', NULL),
+(16, 'Fulano', '111.111.111-26', '(65)999888-8875', 'fulano26@gmail.com', NULL),
+(17, 'Fulano', '111.111.111-27', '(65)999888-8875', 'fulano27@gmail.com', NULL),
+(18, 'Fulano', '111.111.111-28', '(65)999888-8875', 'fulano28@gmail.com', NULL),
+(19, 'Fulano', '111.111.111-29', '(65)999888-8875', 'fulano29@gmail.com', NULL),
+(20, 'Fulano', '111.111.111-35', '(65)999888-8875', 'fulano35@gmail.com', NULL),
+(21, 'Fulano', '111.111.111-36', '(65)999888-8875', 'fulano36@gmail.com', NULL),
+(22, 'Fulano', '111.111.111-37', '(65)999888-8875', 'fulano37@gmail.com', NULL),
+(23, 'Fulano', '111.111.111-38', '(65)999888-8875', 'fulano38@gmail.com', NULL),
+(24, 'Fulano', '111.111.111-39', '(65)999888-8875', 'fulano39@gmail.com', NULL),
+(25, 'Fulano', '111.111.111-45', '(65)999888-8875', 'fulano45@gmail.com', NULL),
+(26, 'Fulano', '111.111.111-46', '(65)999888-8875', 'fulano46@gmail.com', NULL),
+(27, 'Fulano', '111.111.111-47', '(65)999888-8875', 'fulano47@gmail.com', NULL),
+(28, 'Fulano', '111.111.111-48', '(65)999888-8875', 'fulano48@gmail.com', NULL),
+(29, 'Fulano2', '111.111.111-49', '(65)999888-8875', 'fulano49@gmail.com', NULL);
 
 -- --------------------------------------------------------
 
@@ -118,7 +168,7 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (12, '2022_06_05_134041_create_foreignkey_products_vehicles_products_table', 1),
 (13, '2022_06_06_145117_add_column_client_id_vehicles_table', 1),
 (14, '2022_06_06_145358_create_foreignkey_client_vehicles_vehicles_table', 1),
-(15, '2022_06_27_123907_add_column_remember_token_users_table', 2);
+(15, '2022_06_27_123907_add_column_remember_token_users_table', 1);
 
 -- --------------------------------------------------------
 
@@ -159,10 +209,10 @@ CREATE TABLE `personal_access_tokens` (
 CREATE TABLE `products` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `value_unit` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `value_unit` double(8,2) NOT NULL,
   `quantity` int(11) NOT NULL,
-  `discount` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
-  `total` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `discount` double(8,2) NOT NULL DEFAULT 0.00,
+  `total` double(8,2) NOT NULL,
   `vehicle_id` bigint(20) UNSIGNED DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -171,9 +221,32 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id`, `name`, `value_unit`, `quantity`, `discount`, `total`, `vehicle_id`) VALUES
-(1, 'Junta de Cabeçote 2', '128,50', 1, '0,00', '128,50', NULL),
-(2, 'Carburador', '778,00', 1, '0,00', '778,00', NULL),
-(3, 'Junta Coletor de escape', '68,75', 1, '0,00', '68,75', NULL);
+(1, 'Pivo de suspensão', 124.00, 2, 0.00, 248.00, 1),
+(2, 'Peças', 125.00, 1, 0.00, 125.00, NULL),
+(3, 'Peças', 125.00, 1, 0.00, 125.00, NULL),
+(4, 'Peças', 125.00, 1, 0.00, 125.00, NULL),
+(5, 'Peças', 125.00, 1, 0.00, 125.00, NULL),
+(6, 'Peças', 125.00, 1, 0.00, 125.00, NULL),
+(7, 'Peças', 125.00, 1, 0.00, 125.00, NULL),
+(8, 'Peças', 125.00, 1, 0.00, 125.00, NULL),
+(9, 'Peças', 125.00, 1, 0.00, 125.00, NULL),
+(10, 'Peças', 125.00, 1, 0.00, 125.00, NULL),
+(11, 'Peças', 125.00, 1, 0.00, 125.00, NULL),
+(12, 'Peças', 125.00, 1, 0.00, 125.00, NULL),
+(13, 'Peças', 125.00, 1, 0.00, 125.00, NULL),
+(14, 'Peças', 125.00, 1, 0.00, 125.00, NULL),
+(15, 'Peças', 125.00, 1, 0.00, 125.00, NULL),
+(16, 'Peças', 125.00, 1, 0.00, 125.00, NULL),
+(17, 'Peças', 125.00, 1, 0.00, 125.00, NULL),
+(18, 'Peças', 125.00, 1, 0.00, 125.00, NULL),
+(19, 'Peças', 125.00, 1, 0.00, 125.00, NULL),
+(20, 'Peças', 125.00, 1, 0.00, 125.00, NULL),
+(21, 'Peças', 125.00, 1, 0.00, 125.00, NULL),
+(22, 'Peças', 125.00, 1, 0.00, 125.00, NULL),
+(23, 'Peças', 125.00, 1, 0.00, 125.00, NULL),
+(24, 'Peças', 125.00, 1, 0.00, 125.00, NULL),
+(25, 'Peças', 125.00, 1, 0.00, 125.00, NULL),
+(26, 'Peças', 125.00, 1, 0.00, 125.00, NULL);
 
 -- --------------------------------------------------------
 
@@ -183,6 +256,7 @@ INSERT INTO `products` (`id`, `name`, `value_unit`, `quantity`, `discount`, `tot
 
 CREATE TABLE `users` (
   `id` bigint(20) UNSIGNED NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `token` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
@@ -193,8 +267,10 @@ CREATE TABLE `users` (
 -- Extraindo dados da tabela `users`
 --
 
-INSERT INTO `users` (`id`, `email`, `password`, `token`, `remember_token`) VALUES
-(1, 'carlos@gmail.com', '$2y$10$Uj2kx.8Rm2AeJr1OTyXale6fHgg/DU6Sj5Qf9ETpUXmsx4WU.dnJy', NULL, NULL);
+INSERT INTO `users` (`id`, `name`, `email`, `password`, `token`, `remember_token`) VALUES
+(1, 'Charles', 'charles@gmail.com', '$2y$10$2EJisujV7KjqA1/z7B8bleU1OY7CuNOztf.KwQVmdtg4XWWMSZ0ii', '', NULL),
+(2, 'Carlos', 'carlos@gmail.com', '$2y$10$qw5QnlnSYE3sI18uAMXlwO25JUtK/xW.mOfuXAOBAXvhv7iAtIJ0i', NULL, NULL),
+(3, 'Antonio', 'toni@gmail.com', '$2y$10$LpF1I4L1eIewhVUUXMnd2.FiCLLSY2rqcZbC.KnMC6S7JeGUFGIRK', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -208,8 +284,8 @@ CREATE TABLE `vehicles` (
   `brand` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `model` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `color` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `year` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
-  `km` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0',
+  `year` bigint(20) NOT NULL,
+  `km` bigint(20) NOT NULL,
   `client_id` bigint(20) UNSIGNED DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -218,8 +294,7 @@ CREATE TABLE `vehicles` (
 --
 
 INSERT INTO `vehicles` (`id`, `plate`, `brand`, `model`, `color`, `year`, `km`, `client_id`) VALUES
-(1, 'OBC1D85', 'Honda', 'Civic', 'Branca', '2012', '125.652', NULL),
-(2, 'CAP 7896', 'Chevrolet', 'Onix', 'Branca', '2019', '128.521', NULL);
+(1, 'OBD 3566', 'Toyota', 'Lexus', 'Preta', 1999, 68, 1);
 
 --
 -- Índices para tabelas despejadas
@@ -296,13 +371,13 @@ ALTER TABLE `vehicles`
 -- AUTO_INCREMENT de tabela `addresses`
 --
 ALTER TABLE `addresses`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
 -- AUTO_INCREMENT de tabela `clients`
 --
 ALTER TABLE `clients`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- AUTO_INCREMENT de tabela `failed_jobs`
@@ -326,19 +401,19 @@ ALTER TABLE `personal_access_tokens`
 -- AUTO_INCREMENT de tabela `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT de tabela `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de tabela `vehicles`
 --
 ALTER TABLE `vehicles`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Restrições para despejos de tabelas
