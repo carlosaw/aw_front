@@ -32,7 +32,7 @@ class CreateForeignkeyProductsVehiclesProductsTable extends Migration
     {
         Schema::table('products', function (Blueprint $table) {
             //
-            $table->$table->dropForeign('vehicle_id');
+            $table->dropForeign('vehicle_id');
         });
     }
 }
