@@ -79,9 +79,11 @@
     
     @else
       <div class="empty">
-        Não há endereços a serem listados!
+        <h3 style="color: red">Não há Endereços a serem listados!</h3>
       </div> 
     @endif
   </div>
-
+  <footer>
+    Copyriht@Todos os direitos reservados!
+</footer>
 @endsection

@@ -28,7 +28,7 @@
     </header>
     
     <div class="login">
-        <div class="form-signin">
+      <div class="form-signin">
         <h1>Login</h1>
 
         @if($errors->any())       
@@ -56,13 +56,14 @@
             <button type="submit" class="btn btn-lg btn-primary">Entrar</button>
             
         </form>
-        
-    </div>
-    </div>
+      
+      </div>
+
         <footer>
             Copyriht@Todos os direitos reservados!
         </footer>
        
+    </div>
 </div>
     <script src="{{ asset('site/jquery.js') }}"></script>
     <script src="{{ asset('site/bootstrap.js') }}"></script>

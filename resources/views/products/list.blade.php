@@ -69,7 +69,7 @@
     @endif
     
   @else
-    Não há Produtos a serem listados!
+  <h3 style="color: red">Não há Produtos a serem listados!</h3>
   @endif
 </div>
 @endsection

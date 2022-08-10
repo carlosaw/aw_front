@@ -59,9 +59,7 @@
         @yield('content')
     </section>
     
-    <footer>
-      Copyriht@Todos os direitos reservados!
-    </footer>
+    
        
 </div>
     <script src="{{ asset('site/jquery.js') }}"></script>
@@ -70,4 +68,5 @@
     <script type="text/javascript" src="{{ asset('site/js/script.js') }}"></script>
     
 </body>
+
 </html>

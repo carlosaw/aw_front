@@ -24,6 +24,7 @@
             </div>
         </div>
     </div>
-
-
+    <footer>
+        Copyriht@Todos os direitos reservados!
+    </footer>
 @endsection

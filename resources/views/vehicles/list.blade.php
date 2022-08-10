@@ -74,4 +74,7 @@
     <h3 style="color: red">Não há Veículos a serem listados!</h3>
   @endif
 </div>
+<footer>
+  Copyriht@Todos os direitos reservados!
+</footer>
 @endsection

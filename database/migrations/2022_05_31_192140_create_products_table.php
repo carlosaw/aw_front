@@ -16,10 +16,8 @@ class CreateProductsTable extends Migration
         Schema::create('products', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->float('value_unit');
+            $table->float('price');
             $table->integer('quantity');
-            $table->float('discount')->default(0);
-            $table->float('total');
         });
     }
     protected $timestamps = false;
