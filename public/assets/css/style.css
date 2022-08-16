@@ -1,6 +1,23 @@
 body {
   background-color: #EEE;
 }
+header {
+  max-height: 80px;
+  overflow: hidden;
+}
+
+.header {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  height: 80px;
+  margin: auto;
+  background-color: rgb(51, 53, 54);
+}
+.logo1 {
+  height: -webkit-fill-available;
+}
+
 .add {
   height: calc(100vh - 160px);
   padding-top: 20px;

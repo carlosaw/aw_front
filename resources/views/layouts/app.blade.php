@@ -12,7 +12,7 @@
     <header>
       <div class="header">
         <a class="logo1" href="{{route('welcome')}}">
-          <img  src="{{ asset('assets/images/logo4.png') }}" width="150" alt="0"/>
+          <img  src="{{ asset('assets/images/logo4.png') }}" width="150"/>
         </a>
               
         <div class="menu">          

@@ -63,11 +63,8 @@ header {
   margin-top: 11px;
   margin-left: 20px;
   position: relative;
-  border-bottom: 6px solid #000;
 }
-.logo1 img:hover {
-  border-bottom: 8px solid #B28756;
-}
+
 
 .menu {
   flex: 1;

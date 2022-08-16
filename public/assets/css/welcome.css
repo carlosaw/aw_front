@@ -33,13 +33,6 @@ header {
   position: relative;
   border-bottom: 6px solid rgb(51, 53, 54);
 }
-.logo1 img:hover {
-  opacity: 0.9;  
-  border-bottom: 6px solid #B28756;
-}
-.logo {
-  opacity: 0.6;
-}
 
 .menu {
   flex: 1;

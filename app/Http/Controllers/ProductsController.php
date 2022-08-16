@@ -36,18 +36,14 @@ class ProductsController extends Controller
         
         if($request->filled('name', 'value_unit', 'quantity', 'discount', 'total')) {
             $name = $request->input('name');
-            $value_unit = $request->input('value_unit');
+            $price = $request->input('price');
             $quantity = $request->input('quantity');
-            $discount = $request->input('discount');
-            $total = $request->input('total');
 
             $p = new Product();
             
             $p->name = $name;
-            $p->value_unit = $value_unit;
+            $p->price = $price;
             $p->quantity = $quantity;
-            $p->discount = $discount;
-            $p->total = $total;
             $p->save();
 
             return redirect()->route('products.list')
@@ -75,18 +71,14 @@ class ProductsController extends Controller
     public function editAction(Request $request, $id) {
         if($request->filled('name')) {// Pega os inputs
             $name = $request->input('name');
-            $value_unit = $request->input('value_unit');
+            $price = $request->input('price');
             $quantity = $request->input('quantity');
-            $discount = $request->input('discount');
-            $total = $request->input('total');
 
             // Muda no banco
             Product::find($id)->update([
                 'name' => $name,
-                'value_unit' => $value_unit,
-                'quantity' => $quantity,
-                'discount' => $discount,
-                'total' => $total
+                'price' => $price,
+                'quantity' => $quantity
             ]);
 
             // Volta pra Lista

@@ -58,12 +58,11 @@
         </form>
       
       </div>
-
-        <footer>
-            Copyriht@Todos os direitos reservados!
-        </footer>
        
     </div>
+    <footer>
+      Copyriht@Todos os direitos reservados!
+  </footer>
 </div>
     <script src="{{ asset('site/jquery.js') }}"></script>
     <script src="{{ asset('site/bootstrap.js') }}"></script>
