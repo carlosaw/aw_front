@@ -1,3 +1,17 @@
+# PHP 7.4
+# Laravel 7
+# Install dependencies
+## composer install
+
+# Generator Key
+## php artisan key:generate
+
+# .env archive
+## db "awlaravel"
+
+# run project
+## php artisan serve
+
 <p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
 
 <p align="center">
